@@ -1,5 +1,11 @@
 # Bitcoin JSON-RPC Service Provider for Laravel
 
+[![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![Dependency Status](https://www.versioneye.com/user/projects/5891ae3a6a0b7c0054e4df90/badge.svg?style=rounded)](https://www.versioneye.com/user/projects/5891ae3a6a0b7c0054e4df90)
+
+## About
+This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
+It's based on [php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
+
 ## Installation
 Run ```php composer.phar require denpa/laravel-bitcoinrpc``` in your project directory or add following lines to composer.json
 ```javascript
@@ -14,9 +20,16 @@ Add `Denpa\Bitcoin\ServiceProvider::class,` line to the providers list somewhere
 Publish config file by running
 `php artisan vendor:publish --provider="Denpa\Bitcoin\ServiceProvider"` in your project directory.
 
+I recommend you to use .env file to configure client.
+To connect to Bitcoin Core you'll need to add at least following parameters
+```
+BITCOIND_USER=(rpcuser from bitcoin.conf)
+BITCOIND_PASS=(rpcpassword from bitcoin.conf)
+```
+
 ## Requirements
-PHP 5.6 or higher
-Laravel 5.1 or higher
+* PHP 5.6 or higher
+* Laravel 5.1 or higher
 
 ## Usage
 You can use service provider by typehinting it to the controller methods.
