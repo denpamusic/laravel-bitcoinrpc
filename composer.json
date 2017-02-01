@@ -1,9 +1,9 @@
 {
     "name": "denpa/laravel-bitcoinrpc",
-	"type": "library",
-	"description": "Bitcoin JSON-RPC Service Provider for Laravel",
-	"keywords": ["laravel","bitcoin","api","jsonrpc","guzzle"],
-	"homepage": "https://github.com/denpamusic/php-bitcoinrpc",
+    "type": "library",
+    "description": "Bitcoin JSON-RPC Service Provider for Laravel",
+    "keywords": ["laravel","bitcoin","api","jsonrpc","guzzle"],
+    "homepage": "https://github.com/denpamusic/php-bitcoinrpc",
     "license": "MIT",
     "authors": [
         {
@@ -11,15 +11,14 @@
             "email": "denpa@netfleet.space",
             "role": "Developer"
         }
-	],
-	"require": {
-		"php": ">=5.6.0",
+    ],
+    "require": {
+        "php": ">=5.6.0",
         "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
         "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
         "phpunit/phpunit": "5.7.*",
-		"codeclimate/php-test-reporter": "dev-master"
     },
     "autoload": {
         "psr-0" : {
