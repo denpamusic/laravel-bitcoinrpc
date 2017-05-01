@@ -1,10 +1,11 @@
 <?php
 
-namespace Denpa\Bitcoin;
+namespace Denpa\Bitcoin\Providers;
 
-use Denpa\Bitcoin\Client;
+use Denpa\Bitcoin\Client as BitcoinClient;
+use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class ServiceProvider extends LaravelServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -13,9 +14,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/bitcoind.php' => config_path('bitcoind.php'),
-        ]);
+        $path = realpath(__DIR__.'/../../config/config.php');
+
+        $this->publishes([$path => config_path('bitcoind.php')], 'config');
+        $this->mergeConfigFrom($path, 'bitcoind');
     }
 
     /**
@@ -25,10 +27,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/bitcoind.php', 'bitcoind');
-
-        $this->app->singleton(Client::class, function ($app) {
-            return new Client([
+        $this->app->singleton(BitcoinClient::class, function ($app) {
+            return new BitcoinClient([
                 'scheme' => config('bitcoind.scheme'),
                 'host'   => config('bitcoind.host'),
                 'port'   => config('bitcoind.port'),
