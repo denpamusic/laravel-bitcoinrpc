@@ -1,12 +1,12 @@
 <?php
 
-use Denpa\Bitcoin\Client as BitcoinClient;
-
-/**
- * Get bitcoind client instance.
- *
- * @return BitcoinClient
- */
-function bitcoind() {
-    return app(BitcoinClient::class);
+if (! function_exists('bitcoind')) {
+    /**
+     * Get bitcoind client instance.
+     *
+     * @return \Denpa\Bitcoin\Client
+     */
+    function bitcoind() {
+        return app('bitcoind');
+    }
 }

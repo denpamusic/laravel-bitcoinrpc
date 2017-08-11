@@ -77,5 +77,5 @@ return [
     |
     */
 
-    'ca'   => env('BITCOIND_CA', ''),
+    'ca'   => null,
 ];

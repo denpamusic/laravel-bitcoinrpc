@@ -3,7 +3,6 @@
 namespace Denpa\Bitcoin\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Denpa\Bitcoin\Client as BitcoinClient;
 
 class Bitcoind extends Facade
 {
@@ -14,6 +13,6 @@ class Bitcoind extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return BitcoinClient::class;
+        return 'bitcoind';
     }
 }
