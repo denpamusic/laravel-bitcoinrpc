@@ -77,5 +77,5 @@ return [
     |
     */
 
-    'ca'   => null,
+    'ca' => null,
 ];
