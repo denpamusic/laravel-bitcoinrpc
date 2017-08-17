@@ -1,0 +1,31 @@
+language: php
+
+dist: trusty
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - hhvm
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+
+script:
+  - mkdir -p build/logs
+  - php vendor/bin/phpunit
+
+matrix:
+  allow_failures:
+    - php: hhvm
+    - php: 5.6
+  fast_finish: true
+
+addons:
+  code_climate:
+    repo_token: 68ba46bd3a5cf4c8b5506d323f40ce3cb93038dd5963752f26eea63ca81038fc
+
+after_success:
+  - vendor/bin/test-reporter

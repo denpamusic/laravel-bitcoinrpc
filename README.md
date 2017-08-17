@@ -42,7 +42,7 @@ BITCOIND_PASS=(rpcpassword from bitcoin.conf)
 ```
 
 ## Requirements
-* PHP 5.6 or higher
+* PHP 7.0 or higher
 * Laravel 5.1 or higher
 
 ## Usage

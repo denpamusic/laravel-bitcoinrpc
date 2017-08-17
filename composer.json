@@ -15,16 +15,20 @@
     "require": {
         "php": ">=5.6.0",
         "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
-        "denpa/php-bitcoinrpc": "^1.0"
+        "denpa/php-bitcoinrpc": "^2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "5.7.*",
-        "orchestra/testbench": "3.x"
+        "phpunit/phpunit": "6.3.*",
+        "orchestra/testbench": "3.x",
+        "codeclimate/php-test-reporter": "dev-master"
     },
     "autoload": {
         "psr-4" : {
             "Denpa\\Bitcoin\\": "src/"
         },
+        "classmap" : [
+            "tests"
+        ],
         "files": [
             "src/helpers.php"
         ]
