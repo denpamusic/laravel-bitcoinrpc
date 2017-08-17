@@ -17,10 +17,10 @@ and run ```php composer.phar update```.
 
 Add `Denpa\Bitcoin\Providers\ServiceProvider::class,` line to the providers list somewhere near the bottom of your /config/app.php file.
 ```php
-    'providers' => [
-        ...
-        Denpa\Bitcoin\Providers\ServiceProvider::class,
-    ];
+'providers' => [
+    ...
+    Denpa\Bitcoin\Providers\ServiceProvider::class,
+];
 ```
 
 Publish config file by running
@@ -28,10 +28,10 @@ Publish config file by running
 
 You might also want to add facade to $aliases array in /config/app.php.
 ```php
-    'aliases' => [
-        ...
-        'Bitcoind' => Denpa\Bitcoin\Facades\Bitcoind::class,
-    ];
+'aliases' => [
+    ...
+    'Bitcoind' => Denpa\Bitcoin\Facades\Bitcoind::class,
+];
 ```
 
 I recommend you to use .env file to configure client.
