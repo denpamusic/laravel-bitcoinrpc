@@ -10,7 +10,7 @@ It's based on [php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) pro
 Run ```php composer.phar require denpa/laravel-bitcoinrpc``` in your project directory or add following lines to composer.json
 ```json
 "require": {
-    "denpa/laravel-bitcoinrpc": "^2.0"
+    "denpa/laravel-bitcoinrpc": "^1.1"
 }
 ```
 and run ```php composer.phar update```.
