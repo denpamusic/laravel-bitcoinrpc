@@ -64,7 +64,7 @@ class ServiceProvider extends IlluminateServiceProvider
                 'port'   => $app['config']->get('bitcoind.port', 8332),
                 'user'   => $app['config']->get('bitcoind.user'),
                 'pass'   => $app['config']->get('bitcoind.password'),
-                'ca'     => $app['config']->get('bitcoind.ca')
+                'ca'     => $app['config']->get('bitcoind.ca'),
             ]);
         });
     }

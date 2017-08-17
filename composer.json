@@ -26,9 +26,6 @@
         "psr-4" : {
             "Denpa\\Bitcoin\\": "src/"
         },
-        "classmap" : [
-            "tests"
-        ],
         "files": [
             "src/helpers.php"
         ]

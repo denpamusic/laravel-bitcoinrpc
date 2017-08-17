@@ -1,9 +1,8 @@
 <?php
 
-use Denpa\Bitcoin\Client as BitcoinClient;
-use Denpa\Bitcoin\Traits\Bitcoind;
-use GuzzleHttp\Psr7\Response;
 use Orchestra\Testbench\TestCase;
+use Denpa\Bitcoin\Traits\Bitcoind;
+use Denpa\Bitcoin\Client as BitcoinClient;
 
 class BitcoindTest extends TestCase
 {

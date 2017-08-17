@@ -6,7 +6,8 @@ if (! function_exists('bitcoind')) {
      *
      * @return \Denpa\Bitcoin\Client
      */
-    function bitcoind() {
+    function bitcoind()
+    {
         return app('bitcoind');
     }
 }
