@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Bitcoin JSON-RPC Service Provider for Laravel",
     "keywords": ["laravel","bitcoin","api","jsonrpc","guzzle"],
-    "homepage": "https://github.com/denpamusic/php-bitcoinrpc",
+    "homepage": "https://github.com/denpamusic/laravel-bitcoinrpc",
     "license": "MIT",
     "authors": [
         {
