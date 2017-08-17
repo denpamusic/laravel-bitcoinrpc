@@ -1,6 +1,6 @@
 # Bitcoin JSON-RPC Service Provider for Laravel
 
-[![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![Dependency Status](https://www.versioneye.com/user/projects/5891ae3a6a0b7c0054e4df90/badge.svg?style=rounded)](https://www.versioneye.com/user/projects/5891ae3a6a0b7c0054e4df90)
+[![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc) [![Code Climate](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/gpa.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc) <a href="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/coverage"><img src="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/coverage.svg" /></a> [![Dependency Status](https://www.versioneye.com/user/projects/58833bfce25f5900365362cf/badge.svg?style=rounded)](https://www.versioneye.com/user/projects/58833bfce25f5900365362cf)
 
 ## About
 This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
