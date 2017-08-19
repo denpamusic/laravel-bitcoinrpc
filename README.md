@@ -121,3 +121,10 @@ class BitcoinController extends Controller
 ## License
 
 This product is distributed under MIT license.
+
+## Donations
+
+If you like this project,
+you can donate Bitcoins to 13gkVWc3sdzpmCLkGkXXfPBwnh6ZXct947.
+
+Thanks for your support!❤
