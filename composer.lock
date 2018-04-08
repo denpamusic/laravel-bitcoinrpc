@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae9110e9f7f9c9ec899daefda2d6a978",
+    "content-hash": "49d9064d354157d3767c51e0a08847e3",
     "packages": [
         {
             "name": "denpa/php-bitcoinrpc",
