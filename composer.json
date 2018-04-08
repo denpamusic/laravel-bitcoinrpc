@@ -1,5 +1,5 @@
 {
-    "name": "denpa/laravel-bitcoinrpc",
+    "name": "kemalevren/laravel-bitcoinrpc",
     "type": "library",
     "description": "Bitcoin JSON-RPC Service Provider for Laravel",
     "keywords": ["laravel","bitcoin","api","jsonrpc","guzzle"],
@@ -9,7 +9,7 @@
         {
             "name": "Denis Paavilainen",
             "email": "denpa@netfleet.space",
-            "role": "Developer"
+            "role": "Software Developer"
         }
     ],
     "require": {
