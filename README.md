@@ -24,7 +24,7 @@ Add `Denpa\Bitcoin\Providers\ServiceProvider::class,` line to the providers list
 ```
 
 Publish config file by running
-`php artisan vendor:publish --provider="Denpa\Bitcoin\ServiceProvider"` in your project directory.
+`php artisan vendor:publish --provider="Denpa\Bitcoin\Providers\ServiceProvider"` in your project directory.
 
 You might also want to add facade to $aliases array in /config/app.php.
 ```php
