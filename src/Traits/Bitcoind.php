@@ -7,12 +7,22 @@ trait Bitcoind
     /**
      * Get bitcoind client instance.
      *
-     * @param  string $name
+     * @param  string  $name
      *
      * @return \Denpa\Bitcoin\Client
      */
     public function bitcoind($name = 'default')
     {
-        return app('bitcoind')->get($name);
+        return app('bitcoindFactory')->get($name);
+    }
+
+    /**
+     * Get bitcoind client factory.
+     *
+     * @return \Denpa\Bitcoin\ClientFactory
+     */
+    public function bitcoindFactory()
+    {
+        return app('bitcoindFactory');
     }
 }

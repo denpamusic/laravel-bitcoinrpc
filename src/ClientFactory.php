@@ -24,7 +24,7 @@ class ClientFactory
     /**
      * Constructs client factory instance.
      *
-     * @param  array $config
+     * @param  array  $config
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class ClientFactory
     /**
      * Gets client config by name.
      *
-     * @param  array $config
+     * @param  array  $config
      *
      * @return \Illuminate\Support\Collection
      */
@@ -58,14 +58,14 @@ class ClientFactory
     /**
      * Gets client instance by name or creates if not exists.
      *
-     * @param  string $name
+     * @param  string  $name
      *
      * @return \Denpa\Bitcoin\Client
      */
     public function get($name = 'default')
     {
         if (! $this->clients->has($name)) {
-            $this->clients->put($name, $this->create($name));
+            $this->clients->put($name, $this->make($name));
         }
 
         return $this->clients->get($name);
@@ -74,11 +74,11 @@ class ClientFactory
     /**
      * Creates client instance.
      *
-     * @param  string $name
+     * @param  string  $name
      *
      * @return \Denpa\Bitcoin\Client
      */
-    public function create($name = 'default')
+    public function make($name = 'default')
     {
         $config = $this->getConfig($name);
 
