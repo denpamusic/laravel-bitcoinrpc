@@ -69,6 +69,32 @@ class BitcoinController extends Controller
 }
 ```
 
+### Trait
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Denpa\Bitcoin\Traits\Bitcoind;
+
+class BitcoinController extends Controller
+{
+  use Bitcoind;
+
+  /**
+   * Get block info.
+   *
+   * @return object
+   */
+   public function blockInfo()
+   {
+      $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
+      $blockInfo = $this->bitcoind()->getBlock($blockHash);
+      return response()->json($blockInfo->get());
+   }
+}
+```
+
 ### Facade
 ```php
 <?php
@@ -118,6 +144,72 @@ class BitcoinController extends Controller
 }
 ```
 
+### Multiple Instances
+You can use multiple configurations to connect to different bitcoin or even altcoin daemons.
+To do this you'll need to open `config/bitcoind.php` file and add new keys containing connection data (see litecoind example in [config file](https://github.com/denpamusic/laravel-bitcoinrpc/blob/multi-instance/config/config.php#L85))
+You can then call specific configuration by passing it's name as parameter with usual methods (examples below)
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use Denpa\Bitcoin\ClientFactory;
+
+class CoinController extends Controller
+{
+  /**
+   * Get bitcoin block info using helper.
+   * No configuration name passed means using default configuration.
+   *
+   * @return object
+   */
+   public function blockInfoUsingHelper()
+   {
+      $blockHash = '000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
+      $blockInfo = bitcoind()->getBlock($blockHash);
+      return response()->json($blockInfo->get());
+   }
+
+  /**
+   * Get litecoin block info using helper.
+   *
+   * @return object
+   */
+   public function litecoinBlockInfoUsingHelper()
+   {
+      $blockHash = 'a0c6bf6e1744b30954c41c1269af7b8045d07724333e2f6e3c9a31349d6d3f42';
+      $blockInfo = bitcoind('litecoin')->getBlock($blockHash);
+      return response()->json($blockInfo->get());
+   }
+
+  /**
+   * Get litecoin block info using facade.
+   *
+   * @return object
+   */
+   public function litecoinBlockInfoUsingFacade()
+   {
+      $blockHash = 'a0c6bf6e1744b30954c41c1269af7b8045d07724333e2f6e3c9a31349d6d3f42';
+      $litecoind = \BitcoindFactory::get('litecoin');
+      $blockInfo = $litecoind->getBlock($blockHash);
+      return response()->json($blockInfo->get());
+   }
+
+  /**
+   * Get litecoin block info using injection.
+   *
+   * @return object
+   */
+   public function litecoinBlockInfoUsingInjection(ClientFactory $bitcoindFactory)
+   {
+      $blockHash = 'a0c6bf6e1744b30954c41c1269af7b8045d07724333e2f6e3c9a31349d6d3f42';
+      $litecoind = $bitcoindFactory->get('litecoin');
+      $blockInfo = $litecoind->getBlock($blockHash);
+      return response()->json($blockInfo->get());
+   }
+}
+```
+
 ## License
 
 This product is distributed under MIT license.
@@ -129,4 +221,3 @@ If you like this project, please consider donating:<br>
 **Bech32**: bc1qyj8v6l70c4mjgq7hujywlg6le09kx09nq8d350
 
 ❤Thanks for your support!❤
-
