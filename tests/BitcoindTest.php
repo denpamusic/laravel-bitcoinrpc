@@ -1,7 +1,7 @@
 <?php
 
-use Orchestra\Testbench\TestCase;
 use Denpa\Bitcoin\ClientFactory;
+use Orchestra\Testbench\TestCase;
 use Denpa\Bitcoin\Traits\Bitcoind;
 use Denpa\Bitcoin\Client as BitcoinClient;
 

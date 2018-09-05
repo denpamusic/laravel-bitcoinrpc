@@ -3,7 +3,6 @@
 namespace Denpa\Bitcoin;
 
 use Denpa\Bitcoin\Client as BitcoinClient;
-use Illuminate\Contracts\Config\Repository;
 
 class ClientFactory
 {

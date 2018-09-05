@@ -4,8 +4,8 @@ if (! function_exists('bitcoind')) {
     /**
      * Get bitcoind client instance by name.
      *
-	 * @param  string  $name
-	 *
+     * @param  string  $name
+     *
      * @return \Denpa\Bitcoin\Client
      */
     function bitcoind($name = 'default')
@@ -15,7 +15,7 @@ if (! function_exists('bitcoind')) {
 
     /**
      * Get client factory.
-	 *
+     *
      * @return \Denpa\Bitcoin\ClientFactory
      */
     function bitcoindFactory()
