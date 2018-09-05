@@ -4,10 +4,12 @@ if (! function_exists('bitcoind')) {
     /**
      * Get bitcoind client instance.
      *
+	 * @param  string $name
+	 *
      * @return \Denpa\Bitcoin\Client
      */
-    function bitcoind()
+    function bitcoind($name = 'default')
     {
-        return app('bitcoind');
+        return app('bitcoind')->get($name);
     }
 }

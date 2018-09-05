@@ -1,6 +1,7 @@
 <?php
 
 use Orchestra\Testbench\TestCase;
+use Denpa\Bitcoin\ClientFactory;
 use Denpa\Bitcoin\Traits\Bitcoind;
 use Denpa\Bitcoin\Client as BitcoinClient;
 
@@ -65,7 +66,9 @@ class BitcoindTest extends TestCase
      */
     public function testFacade()
     {
-        $this->assertInstanceOf(BitcoinClient::class, \Bitcoind::getFacadeRoot());
+        $this->assertInstanceOf(ClientFactory::class, \Bitcoind::getFacadeRoot());
+        $this->assertInstanceOf(BitcoinClient::class, \Bitcoind::getFacadeRoot()->get());
+        $this->assertInstanceOf(BitcoinClient::class, \Bitcoind::getFacadeRoot()->get('default'));
     }
 
     /**
@@ -76,6 +79,7 @@ class BitcoindTest extends TestCase
     public function testHelper()
     {
         $this->assertInstanceOf(BitcoinClient::class, bitcoind());
+        $this->assertInstanceOf(BitcoinClient::class, bitcoind('default'));
     }
 
     /**
@@ -86,33 +90,62 @@ class BitcoindTest extends TestCase
     public function testTrait()
     {
         $this->assertInstanceOf(BitcoinClient::class, $this->bitcoind());
+        $this->assertInstanceOf(BitcoinClient::class, $this->bitcoind('default'));
     }
 
     /**
      * Test bitcoin config.
      *
      * @return void
+     *
+     * @dataProvider nameProvider
      */
-    public function testConfig()
+    public function testConfig($name)
     {
-        $config = bitcoind()->getConfig();
+        $config = bitcoind($name)->getConfig();
 
         $this->assertEquals(
-            config('bitcoind.scheme'),
+            config("bitcoind.$name.scheme"),
             $config['base_uri']->getScheme()
         );
 
         $this->assertEquals(
-            config('bitcoind.host'),
+            config("bitcoind.$name.host"),
             $config['base_uri']->getHost()
         );
 
         $this->assertEquals(
-            config('bitcoind.port'),
+            config("bitcoind.$name.port"),
             $config['base_uri']->getPort()
         );
 
-        $this->assertEquals(config('bitcoind.user'), $config['auth'][0]);
-        $this->assertEquals(config('bitcoind.password'), $config['auth'][1]);
+        $this->assertEquals(config("bitcoind.$name.user"), $config['auth'][0]);
+        $this->assertEquals(config("bitcoind.$name.password"), $config['auth'][1]);
+    }
+
+    /**
+     * Name provider for config test.
+     *
+     * @return array
+     */
+    public function nameProvider()
+    {
+        return [
+            ['default'],
+            ['litecoin'],
+        ];
+    }
+
+    /**
+     * Test with non existent config.
+     *
+     * @return void
+     */
+    public function testNonExistentConfig()
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('Could not find client configuration [nonexistent]');
+
+        $config = bitcoind('nonexistent')->getConfig();
     }
 }
