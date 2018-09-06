@@ -2,7 +2,7 @@
 
 namespace Denpa\Bitcoin\Providers;
 
-use Denpa\Bitcoin\Client as BitcoinClient;
+use Denpa\Bitcoin\ClientFactory;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class ServiceProvider extends IlluminateServiceProvider
@@ -29,6 +29,7 @@ class ServiceProvider extends IlluminateServiceProvider
     {
         $this->registerAliases();
 
+        $this->registerFactory();
         $this->registerClient();
     }
 
@@ -40,7 +41,8 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function registerAliases()
     {
         $aliases = [
-            'bitcoind' => 'Denpa\Bitcoin\Client',
+            'bitcoind'        => 'Denpa\Bitcoin\Client',
+            'bitcoindFactory' => 'Denpa\Bitcoin\ClientFactory',
         ];
 
         foreach ($aliases as $key => $aliases) {
@@ -51,21 +53,26 @@ class ServiceProvider extends IlluminateServiceProvider
     }
 
     /**
-     * Register client.
+     * Register client factory.
+     *
+     * @return void
+     */
+    protected function registerFactory()
+    {
+        $this->app->singleton('bitcoindFactory', function ($app) {
+            return new ClientFactory(config('bitcoind'));
+        });
+    }
+
+    /**
+     * Register client shortcut.
      *
      * @return void
      */
     protected function registerClient()
     {
-        $this->app->singleton('bitcoind', function ($app) {
-            return new BitcoinClient([
-                'scheme' => $app['config']->get('bitcoind.scheme', 'http'),
-                'host'   => $app['config']->get('bitcoind.host', 'localhost'),
-                'port'   => $app['config']->get('bitcoind.port', 8332),
-                'user'   => $app['config']->get('bitcoind.user'),
-                'pass'   => $app['config']->get('bitcoind.password'),
-                'ca'     => $app['config']->get('bitcoind.ca'),
-            ]);
+        $this->app->bind('bitcoind', function ($app) {
+            return $app['bitcoindFactory']->get();
         });
     }
 }
