@@ -26,7 +26,7 @@ Add `Denpa\Bitcoin\Providers\ServiceProvider::class,` line to the providers list
 Publish config file by running
 `php artisan vendor:publish --provider="Denpa\Bitcoin\Providers\ServiceProvider"` in your project directory.
 
-You might also want to add facade to $aliases array in /config/app.php.
+You also might want to add facade to $aliases array in `/config/app.php`.
 ```php
 'aliases' => [
     ...
@@ -35,11 +35,38 @@ You might also want to add facade to $aliases array in /config/app.php.
 ];
 ```
 
-I recommend you to use .env file to configure client.
-To connect to Bitcoin Core you'll need to add at least following parameters
+You can use [Environment Configuration](https://laravel.com/docs/master/configuration#environment-configuration) file to configure bitcoind client.
+You must have at least following parameters defined:
 ```
 BITCOIND_USER=(rpcuser from bitcoin.conf)
 BITCOIND_PASSWORD=(rpcpassword from bitcoin.conf)
+```
+See `config/bitcoind.php` and [.env.example](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/.env.example) files to learn more about supported parameters.
+You can also directly define your configurations in `config/bitcoind.php`:
+```
+<?php
+
+return [
+    ...
+        'bitcoin' => [
+            'scheme'   => 'http',
+            'host'     => 'localhost',
+            'port'     => 8332,
+            'user'     => '(rpcuser from bitcoin.conf)',     // required
+            'password' => '(rpcpassword from bitcoin.conf)', // required
+            'ca'       => null,
+        ],
+
+        'bitcoin2' => [
+            'scheme'   => 'http',
+            'host'     => 'example.com',
+            'port'     => 8332,
+            'user'     => '(rpcuser at example.com server)',     // required
+            'password' => '(rpcpassword at example.com server)', // required
+            'ca'       => null,
+        ],
+    ...
+];
 ```
 
 ## Requirements

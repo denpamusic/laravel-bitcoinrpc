@@ -83,11 +83,11 @@ return [
     ],
 
     'litecoin' => [
-        'scheme' => 'http',
-        'host' => 'localhost',
-        'port' => 9332,
-        'user' => '',
+        'scheme'   => 'http',
+        'host'     => 'localhost',
+        'port'     => 9332,
+        'user'     => '',
         'password' => '',
-        'ca' => null,
+        'ca'       => null,
     ],
 ];
