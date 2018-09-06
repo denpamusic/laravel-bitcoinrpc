@@ -192,7 +192,7 @@ class BitcoindTest extends TestCase
 
         $config = bitcoind()->getConfig();
 
-        $this->assertEquals(config("bitcoind.user"), $config['auth'][0]);
-        $this->assertEquals(config("bitcoind.password"), $config['auth'][1]);
+        $this->assertEquals(config('bitcoind.user'), $config['auth'][0]);
+        $this->assertEquals(config('bitcoind.password'), $config['auth'][1]);
     }
 }

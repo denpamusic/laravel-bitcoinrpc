@@ -65,7 +65,7 @@ class ClientFactory
     public function getConfig($name = 'default')
     {
         if (isset($this->config['host']) && ! is_array($this->config['host'])) {
-            /**
+            /*
              * Legacy config format with single configuration.
              * Please update it manually or via 'php artisan vendor:publish'
              * See: https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/config/config.php
