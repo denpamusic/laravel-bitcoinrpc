@@ -15,7 +15,7 @@ Run ```php composer.phar require denpa/laravel-bitcoinrpc``` in your project dir
 ```
 and run ```php composer.phar update```.
 
-Add `Denpa\Bitcoin\Providers\ServiceProvider::class,` line to the providers list somewhere near the bottom of your /config/app.php file.
+Add `Denpa\Bitcoin\Providers\ServiceProvider::class,` line to the providers list somewhere near the bottom of your `/config/app.php` file.
 ```php
 'providers' => [
     ...
@@ -49,6 +49,7 @@ You can also directly define your configurations in `config/bitcoind.php`:
 
 return [
     ...
+        // local bitcoind
         'bitcoin' => [
             'scheme'   => 'http',
             'host'     => 'localhost',
@@ -58,6 +59,8 @@ return [
             'ca'       => null,
         ],
 
+        // bitcoind on remote server (example.com)
+        // (can be called with bitcoind('bitcoin2') once defined here)
         'bitcoin2' => [
             'scheme'   => 'http',
             'host'     => 'example.com',
