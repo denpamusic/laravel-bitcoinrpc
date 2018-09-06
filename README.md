@@ -175,7 +175,7 @@ class BitcoinController extends Controller
 ### Multiple Instances
 You can use multiple configurations to connect to different bitcoin or even altcoin daemons.
 To do this you'll need to open `config/bitcoind.php` file and add new keys containing connection data (see litecoind example in [config file](https://github.com/denpamusic/laravel-bitcoinrpc/blob/multi-instance/config/config.php#L85))
-You can then call specific configuration by passing it's name as parameter with usual methods (examples below)
+You can then call specific configuration by passing it's name as parameter with usual methods (see examples below)
 ```php
 <?php
 
@@ -212,6 +212,7 @@ class CoinController extends Controller
 
   /**
    * Get litecoin block info using facade.
+   * Note BitcoindFactory facade used to get specific client configuration.
    *
    * @return object
    */
@@ -225,6 +226,8 @@ class CoinController extends Controller
 
   /**
    * Get litecoin block info using injection.
+   * Note ClientFactory hint as we need factory to
+   * get specific client configuration.
    *
    * @return object
    */
