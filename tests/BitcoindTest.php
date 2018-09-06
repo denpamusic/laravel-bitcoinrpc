@@ -173,4 +173,26 @@ class BitcoindTest extends TestCase
 
         $config = bitcoind('nonexistent')->getConfig();
     }
+
+    /**
+     * Test with legacy config format.
+     *
+     * @return void
+     */
+    public function testLegacyConfig()
+    {
+        config()->set('bitcoind', [
+            'scheme'   => 'http',
+            'host'     => 'localhost',
+            'port'     => 8332,
+            'user'     => 'testuser3',
+            'password' => 'testpass3',
+            'ca'       => null,
+        ]);
+
+        $config = bitcoind()->getConfig();
+
+        $this->assertEquals(config("bitcoind.user"), $config['auth'][0]);
+        $this->assertEquals(config("bitcoind.password"), $config['auth'][1]);
+    }
 }
