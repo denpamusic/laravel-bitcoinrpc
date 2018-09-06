@@ -35,6 +35,7 @@ You also might want to add facade to $aliases array in `/config/app.php`.
 ];
 ```
 
+## Configuration
 You can use [Environment Configuration](https://laravel.com/docs/master/configuration#environment-configuration) file to configure bitcoind client.
 You must have at least following parameters defined:
 ```
