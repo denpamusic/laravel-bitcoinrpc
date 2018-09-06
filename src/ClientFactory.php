@@ -34,11 +34,33 @@ class ClientFactory
     }
 
     /**
+     * Appends configuration array with default values.
+     *
+     * @param  array  $config
+     *
+     * @return array
+     */
+    protected function withDefaults(array $config = [])
+    {
+        // for backward compatibility - remove later
+        $config['pass'] = $config['password'];
+
+        return array_merge([
+            'scheme'   => 'http',
+            'host'     => 'localhost',
+            'port'     => 8332,
+            'user'     => null,
+            'pass'     => null,
+            'ca'       => null,
+        ], $config);
+    }
+
+    /**
      * Gets client config by name.
      *
      * @param  array  $config
      *
-     * @return \Illuminate\Support\Collection
+     * @return array
      */
     public function getConfig($name = 'default')
     {
@@ -51,7 +73,7 @@ class ClientFactory
             throw new \Exception("Could not find client configuration [$name]");
         }
 
-        return collect($this->config[$name]);
+        return $this->withDefaults($this->config[$name]);
     }
 
     /**
@@ -64,7 +86,9 @@ class ClientFactory
     public function get($name = 'default')
     {
         if (! $this->clients->has($name)) {
-            $this->clients->put($name, $this->make($name));
+            $config = $this->getConfig($name);
+
+            $this->clients->put($name, $this->make($config));
         }
 
         return $this->clients->get($name);
@@ -73,21 +97,12 @@ class ClientFactory
     /**
      * Creates client instance.
      *
-     * @param  string  $name
+     * @param  array  $config
      *
      * @return \Denpa\Bitcoin\Client
      */
-    public function make($name = 'default')
+    public function make(array $config = [])
     {
-        $config = $this->getConfig($name);
-
-        return new BitcoinClient([
-            'scheme' => $config->get('scheme', 'http'),
-            'host'   => $config->get('host', 'localhost'),
-            'port'   => $config->get('port', 8332),
-            'user'   => $config->get('user'),
-            'pass'   => $config->get('password'),
-            'ca'     => $config->get('ca'),
-        ]);
+        return new BitcoinClient($config);
     }
 }

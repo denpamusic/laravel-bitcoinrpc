@@ -48,21 +48,21 @@ class BitcoindTest extends TestCase
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('bitcoind.default', [
-            'scheme' => 'http',
-            'host'   => 'localhost',
-            'port'   => 8332,
-            'user'   => 'testuser',
-            'pass'   => 'testpass',
-            'ca'     => null,
+            'scheme'   => 'http',
+            'host'     => 'localhost',
+            'port'     => 8332,
+            'user'     => 'testuser',
+            'password' => 'testpass',
+            'ca'       => null,
         ]);
 
         $app['config']->set('bitcoind.litecoin', [
-            'scheme' => 'http',
-            'host'   => 'localhost',
-            'port'   => 9332,
-            'user'   => 'testuser2',
-            'pass'   => 'testpass2',
-            'ca'     => null,
+            'scheme'   => 'http',
+            'host'     => 'localhost',
+            'port'     => 9332,
+            'user'     => 'testuser2',
+            'password' => 'testpass2',
+            'ca'       => null,
         ]);
     }
 
