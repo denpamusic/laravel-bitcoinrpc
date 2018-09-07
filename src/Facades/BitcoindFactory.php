@@ -13,6 +13,6 @@ class BitcoindFactory extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'bitcoindFactory';
+        return 'bitcoind.factory';
     }
 }

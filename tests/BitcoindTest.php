@@ -74,7 +74,7 @@ class BitcoindTest extends TestCase
     public function testServiceIsAvailable()
     {
         $this->assertTrue($this->app->bound('bitcoind'));
-        $this->assertTrue($this->app->bound('bitcoindFactory'));
+        $this->assertTrue($this->app->bound('bitcoind.factory'));
     }
 
     /**

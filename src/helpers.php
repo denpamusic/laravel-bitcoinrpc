@@ -10,7 +10,7 @@ if (! function_exists('bitcoind')) {
      */
     function bitcoind($name = 'default')
     {
-        return app('bitcoindFactory')->get($name);
+        return app('bitcoind.factory')->get($name);
     }
 }
 
@@ -22,6 +22,6 @@ if (! function_exists('bitcoindFactory')) {
      */
     function bitcoindFactory()
     {
-        return app('bitcoindFactory');
+        return app('bitcoind.factory');
     }
 }

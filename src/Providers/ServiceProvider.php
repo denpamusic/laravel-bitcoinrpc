@@ -41,8 +41,8 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function registerAliases()
     {
         $aliases = [
-            'bitcoind'        => 'Denpa\Bitcoin\Client',
-            'bitcoindFactory' => 'Denpa\Bitcoin\ClientFactory',
+            'bitcoind'         => 'Denpa\Bitcoin\Client',
+            'bitcoind.factory' => 'Denpa\Bitcoin\ClientFactory',
         ];
 
         foreach ($aliases as $key => $aliases) {
@@ -59,7 +59,7 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     protected function registerFactory()
     {
-        $this->app->singleton('bitcoindFactory', function ($app) {
+        $this->app->singleton('bitcoind.factory', function ($app) {
             return new ClientFactory(config('bitcoind'));
         });
     }
@@ -72,7 +72,17 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function registerClient()
     {
         $this->app->bind('bitcoind', function ($app) {
-            return $app['bitcoindFactory']->get();
+            return $app['bitcoind.factory']->get();
         });
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['bitcoind', 'bitcoind.factory'];
     }
 }

@@ -13,7 +13,7 @@ trait Bitcoind
      */
     public function bitcoind($name = 'default')
     {
-        return app('bitcoindFactory')->get($name);
+        return app('bitcoind.factory')->get($name);
     }
 
     /**
@@ -23,6 +23,6 @@ trait Bitcoind
      */
     public function bitcoindFactory()
     {
-        return app('bitcoindFactory');
+        return app('bitcoind.factory');
     }
 }
