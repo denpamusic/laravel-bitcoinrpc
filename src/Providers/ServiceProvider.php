@@ -75,14 +75,4 @@ class ServiceProvider extends IlluminateServiceProvider
             return $app['bitcoind.factory']->get();
         });
     }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['bitcoind', 'bitcoind.factory'];
-    }
 }
