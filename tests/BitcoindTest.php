@@ -144,6 +144,8 @@ class BitcoindTest extends TestCase
             $config['base_uri']->getPort()
         );
 
+        $this->assertNotNull($config['auth'][0]);
+        $this->assertNotNull($config['auth'][1]);
         $this->assertEquals(config("bitcoind.$name.user"), $config['auth'][0]);
         $this->assertEquals(config("bitcoind.$name.password"), $config['auth'][1]);
     }
@@ -192,6 +194,8 @@ class BitcoindTest extends TestCase
 
         $config = bitcoind()->getConfig();
 
+        $this->assertNotNull($config['auth'][0]);
+        $this->assertNotNull($config['auth'][1]);
         $this->assertEquals(config('bitcoind.user'), $config['auth'][0]);
         $this->assertEquals(config('bitcoind.password'), $config['auth'][1]);
     }
