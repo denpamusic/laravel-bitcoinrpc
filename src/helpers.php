@@ -12,7 +12,9 @@ if (! function_exists('bitcoind')) {
     {
         return app('bitcoindFactory')->get($name);
     }
+}
 
+if (! function_exists('bitcoindFactory')) {
     /**
      * Get client factory.
      *
