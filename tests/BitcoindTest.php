@@ -68,6 +68,39 @@ class BitcoindTest extends TestCase
     }
 
     /**
+     * Checks if client config was correctly set.
+     *
+     * @param  \Denpa\Bitcoin\Client  $client
+     * @param  array  $config
+     *
+     * @return void
+     */
+    protected function assertClientConfig(BitcoinClient $client, array $config)
+    {
+        $clientConfig = $client->getConfig();
+
+        $this->assertEquals(
+            $config['scheme'],
+            $clientConfig['base_uri']->getScheme()
+        );
+
+        $this->assertEquals(
+            $config['host'],
+            $clientConfig['base_uri']->getHost()
+        );
+
+        $this->assertEquals(
+            $config['port'],
+            $clientConfig['base_uri']->getPort()
+        );
+
+        $this->assertNotNull($clientConfig['auth'][0]);
+        $this->assertNotNull($clientConfig['auth'][1]);
+        $this->assertEquals($config['user'], $clientConfig['auth'][0]);
+        $this->assertEquals($config['password'], $clientConfig['auth'][1]);
+    }
+
+    /**
      * Test service provider.
      *
      * @return void
@@ -158,27 +191,10 @@ class BitcoindTest extends TestCase
      */
     public function testConfig($name)
     {
-        $config = bitcoind()->client($name)->getConfig();
-
-        $this->assertEquals(
-            config("bitcoind.$name.scheme"),
-            $config['base_uri']->getScheme()
+        $this->assertClientConfig(
+            bitcoind()->client($name),
+            config("bitcoind.$name")
         );
-
-        $this->assertEquals(
-            config("bitcoind.$name.host"),
-            $config['base_uri']->getHost()
-        );
-
-        $this->assertEquals(
-            config("bitcoind.$name.port"),
-            $config['base_uri']->getPort()
-        );
-
-        $this->assertNotNull($config['auth'][0]);
-        $this->assertNotNull($config['auth'][1]);
-        $this->assertEquals(config("bitcoind.$name.user"), $config['auth'][0]);
-        $this->assertEquals(config("bitcoind.$name.password"), $config['auth'][1]);
     }
 
     /**
@@ -223,12 +239,7 @@ class BitcoindTest extends TestCase
             'ca'       => null,
         ]);
 
-        $config = bitcoind()->client()->getConfig();
-
-        $this->assertNotNull($config['auth'][0]);
-        $this->assertNotNull($config['auth'][1]);
-        $this->assertEquals(config('bitcoind.user'), $config['auth'][0]);
-        $this->assertEquals(config('bitcoind.password'), $config['auth'][1]);
+        $this->assertClientConfig(bitcoind()->client(), config('bitcoind'));
     }
 
     /**

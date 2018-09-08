@@ -42,15 +42,12 @@ class ClientFactory
      */
     protected function withDefaults(array $config = [])
     {
-        // for backward compatibility - remove later
-        $config['pass'] = $config['password'];
-
         return array_merge([
             'scheme'   => 'http',
             'host'     => 'localhost',
             'port'     => 8332,
             'user'     => null,
-            'pass'     => null,
+            'password' => null,
             'ca'       => null,
         ], $config);
     }

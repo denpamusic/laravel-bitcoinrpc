@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "denpa/php-bitcoinrpc",
-            "version": "v2.0.6",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/denpamusic/php-bitcoinrpc.git",
-                "reference": "333a012f48cafc9b45ae8a40bdf072640ce97da7"
+                "reference": "5a34bfcc56bd0af166b4efaba541720a8a0a55ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/denpamusic/php-bitcoinrpc/zipball/333a012f48cafc9b45ae8a40bdf072640ce97da7",
-                "reference": "333a012f48cafc9b45ae8a40bdf072640ce97da7",
+                "url": "https://api.github.com/repos/denpamusic/php-bitcoinrpc/zipball/5a34bfcc56bd0af166b4efaba541720a8a0a55ac",
+                "reference": "5a34bfcc56bd0af166b4efaba541720a8a0a55ac",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
                 "bitcoin",
                 "jsonrpc"
             ],
-            "time": "2018-09-07T10:24:16+00:00"
+            "time": "2018-09-08T19:31:33+00:00"
         },
         {
             "name": "doctrine/inflector",
