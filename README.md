@@ -236,10 +236,10 @@ class CoinController extends Controller
    *
    * @return object
    */
-   public function litecoinBlockInfoUsingInjection(ClientFactory $bitcoind)
+   public function litecoinBlockInfoUsingInjection(ClientFactory $factory)
    {
       $blockHash = 'a0c6bf6e1744b30954c41c1269af7b8045d07724333e2f6e3c9a31349d6d3f42';
-      $litecoind = $bitcoind->client('litecoin');
+      $litecoind = $factory->client('litecoin');
       $blockInfo = $litecoind->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
