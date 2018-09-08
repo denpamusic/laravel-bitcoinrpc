@@ -92,7 +92,7 @@ class ClientFactory
      *
      * @return \Denpa\Bitcoin\Client
      */
-    public function get($name = 'default')
+    public function client($name = 'default')
     {
         if (! $this->clients->has($name)) {
             $config = $this->getConfig($name);
@@ -113,5 +113,18 @@ class ClientFactory
     public function make(array $config = [])
     {
         return new BitcoinClient($config);
+    }
+
+    /**
+     * Pass methods onto the default client.
+     *
+     * @param  string  $method
+     * @param  array   $parameters
+     *
+     * @return mixed
+     */
+    public function __call($method, array $parameters)
+    {
+        return $this->client()->{$method}(...$parameters);
     }
 }

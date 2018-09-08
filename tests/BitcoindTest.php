@@ -3,7 +3,9 @@
 use Denpa\Bitcoin\ClientFactory;
 use Orchestra\Testbench\TestCase;
 use Denpa\Bitcoin\Traits\Bitcoind;
+use GuzzleHttp\Client as GuzzleHttp;
 use Denpa\Bitcoin\Client as BitcoinClient;
+use Denpa\Bitcoin\Facades\Bitcoind as BitcoindFacade;
 
 class BitcoindTest extends TestCase
 {
@@ -33,8 +35,7 @@ class BitcoindTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'Bitcoind'        => 'Denpa\Bitcoin\Facades\Bitcoind',
-            'BitcoindFactory' => 'Denpa\Bitcoin\Facades\BitcoindFactory',
+            'Bitcoind' => 'Denpa\Bitcoin\Facades\Bitcoind',
         ];
     }
 
@@ -73,8 +74,16 @@ class BitcoindTest extends TestCase
      */
     public function testServiceIsAvailable()
     {
+        $this->assertInstanceOf(
+            ClientFactory::class, $this->app['bitcoind']
+        );
+
+        $this->assertInstanceOf(
+            BitcoinClient::class, $this->app['bitcoind.client']
+        );
+
         $this->assertTrue($this->app->bound('bitcoind'));
-        $this->assertTrue($this->app->bound('bitcoind.factory'));
+        $this->assertTrue($this->app->bound('bitcoind.client'));
     }
 
     /**
@@ -84,10 +93,20 @@ class BitcoindTest extends TestCase
      */
     public function testFacade()
     {
-        $this->assertInstanceOf(BitcoinClient::class, \Bitcoind::getFacadeRoot());
-        $this->assertInstanceOf(ClientFactory::class, \BitcoindFactory::getFacadeRoot());
-        $this->assertInstanceOf(BitcoinClient::class, \BitcoindFactory::getFacadeRoot()->get());
-        $this->assertInstanceOf(BitcoinClient::class, \BitcoindFactory::getFacadeRoot()->get('default'));
+        $this->assertInstanceOf(
+            ClientFactory::class,
+            BitcoindFacade::getFacadeRoot()
+        );
+
+        $this->assertInstanceOf(
+            BitcoinClient::class,
+            BitcoindFacade::getFacadeRoot()->client()
+        );
+
+        $this->assertInstanceOf(
+            BitcoinClient::class,
+            BitcoindFacade::getFacadeRoot()->client('default')
+        );
     }
 
     /**
@@ -97,11 +116,17 @@ class BitcoindTest extends TestCase
      */
     public function testHelper()
     {
-        $this->assertInstanceOf(BitcoinClient::class, bitcoind());
-        $this->assertInstanceOf(BitcoinClient::class, bitcoind('default'));
-        $this->assertInstanceOf(ClientFactory::class, bitcoindFactory());
-        $this->assertInstanceOf(BitcoinClient::class, bitcoindFactory()->get());
-        $this->assertInstanceOf(BitcoinClient::class, bitcoindFactory()->get('default'));
+        $this->assertInstanceOf(
+            ClientFactory::class, bitcoind()
+        );
+
+        $this->assertInstanceOf(
+            BitcoinClient::class, bitcoind()->client()
+        );
+
+        $this->assertInstanceOf(
+            BitcoinClient::class, bitcoind()->client('default')
+        );
     }
 
     /**
@@ -111,11 +136,17 @@ class BitcoindTest extends TestCase
      */
     public function testTrait()
     {
-        $this->assertInstanceOf(BitcoinClient::class, $this->bitcoind());
-        $this->assertInstanceOf(BitcoinClient::class, $this->bitcoind('default'));
-        $this->assertInstanceOf(ClientFactory::class, $this->bitcoindFactory());
-        $this->assertInstanceOf(BitcoinClient::class, $this->bitcoindFactory()->get());
-        $this->assertInstanceOf(BitcoinClient::class, $this->bitcoindFactory()->get('default'));
+        $this->assertInstanceOf(
+            ClientFactory::class, $this->bitcoind()
+        );
+
+        $this->assertInstanceOf(
+            BitcoinClient::class, $this->bitcoind()->client()
+        );
+
+        $this->assertInstanceOf(
+            BitcoinClient::class, $this->bitcoind()->client('default')
+        );
     }
 
     /**
@@ -127,7 +158,7 @@ class BitcoindTest extends TestCase
      */
     public function testConfig($name)
     {
-        $config = bitcoind($name)->getConfig();
+        $config = bitcoind()->client($name)->getConfig();
 
         $this->assertEquals(
             config("bitcoind.$name.scheme"),
@@ -173,7 +204,7 @@ class BitcoindTest extends TestCase
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Could not find client configuration [nonexistent]');
 
-        $config = bitcoind('nonexistent')->getConfig();
+        $config = bitcoind()->client('nonexistent')->getConfig();
     }
 
     /**
@@ -192,11 +223,21 @@ class BitcoindTest extends TestCase
             'ca'       => null,
         ]);
 
-        $config = bitcoind()->getConfig();
+        $config = bitcoind()->client()->getConfig();
 
         $this->assertNotNull($config['auth'][0]);
         $this->assertNotNull($config['auth'][1]);
         $this->assertEquals(config('bitcoind.user'), $config['auth'][0]);
         $this->assertEquals(config('bitcoind.password'), $config['auth'][1]);
+    }
+
+    /**
+     * Test magic call to client through factory
+     *
+     * @return void
+     */
+    public function testMagicCall()
+    {
+        $this->assertInstanceOf(GuzzleHttp::class, bitcoind()->getClient());
     }
 }

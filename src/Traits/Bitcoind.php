@@ -5,24 +5,12 @@ namespace Denpa\Bitcoin\Traits;
 trait Bitcoind
 {
     /**
-     * Get bitcoind client instance.
-     *
-     * @param  string  $name
-     *
-     * @return \Denpa\Bitcoin\Client
-     */
-    public function bitcoind($name = 'default')
-    {
-        return app('bitcoind.factory')->get($name);
-    }
-
-    /**
-     * Get bitcoind client factory.
+     * Get bitcoind client factory instance.
      *
      * @return \Denpa\Bitcoin\ClientFactory
      */
-    public function bitcoindFactory()
+    public function bitcoind()
     {
-        return app('bitcoind.factory');
+        return app('bitcoind');
     }
 }
