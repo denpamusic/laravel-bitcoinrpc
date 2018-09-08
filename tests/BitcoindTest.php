@@ -232,7 +232,7 @@ class BitcoindTest extends TestCase
     }
 
     /**
-     * Test magic call to client through factory
+     * Test magic call to client through factory.
      *
      * @return void
      */

@@ -188,6 +188,7 @@ You can then call specific configuration by passing it's name as parameter with 
 namespace App\Http\Controllers;
 
 use Denpa\Bitcoin\ClientFactory;
+use Denpa\Bitcoin\Facades\Bitcoind;
 
 class CoinController extends Controller
 {
@@ -212,7 +213,7 @@ class CoinController extends Controller
    public function litecoinBlockInfoUsingHelper()
    {
       $blockHash = 'a0c6bf6e1744b30954c41c1269af7b8045d07724333e2f6e3c9a31349d6d3f42';
-      $blockInfo = bitcoind('litecoin')->getBlock($blockHash);
+      $blockInfo = bitcoind()->client('litecoin')->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
 
@@ -225,8 +226,7 @@ class CoinController extends Controller
    public function litecoinBlockInfoUsingFacade()
    {
       $blockHash = 'a0c6bf6e1744b30954c41c1269af7b8045d07724333e2f6e3c9a31349d6d3f42';
-      $litecoind = \BitcoindFactory::get('litecoin');
-      $blockInfo = $litecoind->getBlock($blockHash);
+      $blockInfo = Bitcoind::client('litecoin')->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
 
@@ -237,10 +237,10 @@ class CoinController extends Controller
    *
    * @return object
    */
-   public function litecoinBlockInfoUsingInjection(ClientFactory $bitcoindFactory)
+   public function litecoinBlockInfoUsingInjection(ClientFactory $bitcoind)
    {
       $blockHash = 'a0c6bf6e1744b30954c41c1269af7b8045d07724333e2f6e3c9a31349d6d3f42';
-      $litecoind = $bitcoindFactory->get('litecoin');
+      $litecoind = $bitcoind->client('litecoin');
       $blockInfo = $litecoind->getBlock($blockHash);
       return response()->json($blockInfo->get());
    }
