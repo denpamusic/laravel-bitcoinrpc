@@ -61,7 +61,7 @@ return [
         ],
 
         // bitcoind on remote server (example.com)
-        // (can be called with bitcoind('bitcoin2') once defined here)
+        // (can be called with bitcoind()->client('bitcoin2') once defined here)
         'bitcoin2' => [
             'scheme'   => 'http',
             'host'     => 'example.com',
