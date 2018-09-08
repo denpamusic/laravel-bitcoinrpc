@@ -33,7 +33,6 @@ You also might want to add facade to $aliases array in `/config/app.php`.
 'aliases' => [
     ...
     'Bitcoind' => Denpa\Bitcoin\Facades\Bitcoind::class,
-    'BitcoindFactory' => Denpa\Bitcoin\Facades\BitcoindFactory::class,
 ];
 ```
 
