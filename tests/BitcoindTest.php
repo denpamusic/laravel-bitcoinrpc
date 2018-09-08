@@ -251,4 +251,22 @@ class BitcoindTest extends TestCase
     {
         $this->assertInstanceOf(GuzzleHttp::class, bitcoind()->getClient());
     }
+
+    /**
+     * Test making new client instance.
+     *
+     * @return void
+     */
+    public function testFactoryMake()
+    {
+        $config = [
+            'scheme'   => 'http',
+            'host'     => '127.0.0.3',
+            'port'     => 18332,
+            'user'     => 'testuser3',
+            'password' => 'testpass3',
+        ];
+
+        $this->assertClientConfig(bitcoind()->make($config), $config);
+    }
 }
