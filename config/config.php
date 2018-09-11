@@ -67,7 +67,7 @@ return [
         |
         */
 
-        'password' => env('BITCOIND_PASSWORD', ''),
+        'pass' => env('BITCOIND_PASSWORD', ''),
 
         /*
         |--------------------------------------------------------------------------
