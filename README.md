@@ -16,10 +16,10 @@ It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrp
 * Laravel 5.1 or higher
 
 ## Documentation
-Documentation is available [here](https://github.com/bitcoin/bitcoin/blob/master/doc/README.md).
+Documentation is available [here](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/README.md).
 
 ## License
-This product is distributed under the [MIT license](https://github.com/bitcoin/bitcoin/blob/master/LICENSE).
+This product is distributed under the [MIT license](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/LICENSE).
 
 ## Donations
 

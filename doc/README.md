@@ -22,7 +22,7 @@ Table of Contents
 * Laravel 5.1 or higher
 
 ## License
-This product is distributed under the [MIT license](https://github.com/bitcoin/bitcoin/blob/master/LICENSE)
+This product is distributed under the [MIT license](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/LICENSE).
 
 ## Donations
 
