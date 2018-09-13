@@ -80,6 +80,26 @@ return [
         */
 
         'ca' => null,
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Bitcoind ZeroMQ options
+        |--------------------------------------------------------------------------
+        | Used to subscribe to zeromq topics pushed by daemon.
+        | In order to use this you mush install "denpa\laravel-zeromq" package,
+        | have Bitcoin Core with zeromq support included and have zmqpubhashtx,
+        | zmqpubhashblock, zmqpubrawblock and zmqpubrawtx options defined
+        | in bitcoind.conf.
+        | For more information
+        | visit https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md.
+        |
+        */
+
+        'zeromq' => [
+            'host' => 'localhost',
+            'port' => 28332,
+        ],
     ],
 
     'litecoin' => [
@@ -89,5 +109,6 @@ return [
         'user'     => '',
         'password' => '',
         'ca'       => null,
+        'zeromq'   => null,
     ],
 ];

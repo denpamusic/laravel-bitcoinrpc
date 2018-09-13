@@ -71,6 +71,6 @@ class Listener
         $this->sequence = strlen($sequence) == 4 ?
             unpack('I', $sequence)[1] : -1;
 
-        return ($this->callback)(bin2hex($payload));
+        return ($this->callback)(bin2hex($payload), $this->sequence);
     }
 }
