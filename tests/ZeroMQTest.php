@@ -13,11 +13,11 @@ class ZeroMQTest extends TestCase
     {
         parent::setUp();
 
-        if (!class_exists('Denpa\ZeroMQ\Manager')) {
+        if (! class_exists('Denpa\ZeroMQ\Manager')) {
             class_alias('FakeManager', 'Denpa\ZeroMQ\Manager');
         }
 
-        if (!class_exists('Denpa\ZeroMQ\Connection')) {
+        if (! class_exists('Denpa\ZeroMQ\Connection')) {
             class_alias('FakeConnection', 'Denpa\ZeroMQ\Connection');
         }
 
@@ -59,7 +59,9 @@ class ZeroMQTest extends TestCase
      */
     public function testSubscribe()
     {
-        $callback = function ($message, $sequence) {};
+        $callback = function ($message, $sequence) {
+            //
+        };
 
         $this->manager->expects($this->once())
             ->method('make')
@@ -78,13 +80,15 @@ class ZeroMQTest extends TestCase
     }
 
     /**
-     * Test with null config
+     * Test with null config.
      *
      * @return void
      */
     public function testNullConfig()
     {
-        $callback = function ($message, $sequence) {};
+        $callback = function ($message, $sequence) {
+            //
+        };
 
         $this->connection
             ->expects($this->never())
