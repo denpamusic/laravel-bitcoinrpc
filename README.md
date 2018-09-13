@@ -247,8 +247,13 @@ class CoinController extends Controller
 ```
 
 ### ZeroMQ
-ZeroMQ support is available since v1.2.5.  
-To use ZeroMQ, daemon must be compiled with libzmq.  
+ZeroMQ support is available since v1.2.5 via [denpa/laravel-zeromq](https://packagist.org/packages/denpa/laravel-zeromq) package.  
+You'll need to install this package to use ZeroMQ features:
+```
+php composer.phar require denpa/laravel-zeromq
+```
+
+To use ZeroMQ, Bitcoin Core must be compiled with libzmq.  
 In order to check this, run `(bitcoind -h | grep -q zmq) && echo "ZeroMQ support available"`.  
 If you get "ZeroMQ support available" then you can use ZeroMQ.  
 
@@ -284,7 +289,7 @@ bitcoind()->on('hashblock', function ($blockhash, $sequence) {
     );
 });
 ```
-For more information about ZeroMQ please visit [Documentation](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md).
+For more information about ZeroMQ and it's usage, please visit [Documentation](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md).
 
 ## License
 
