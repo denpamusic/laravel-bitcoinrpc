@@ -2,6 +2,8 @@
 
 namespace Denpa\Bitcoin\ZeroMQ;
 
+use Denpa\ZeroMQ\Manager;
+
 class Connection
 {
     /**
@@ -25,10 +27,10 @@ class Connection
      *
      * @return void
      */
-    public function __construct($config)
+    public function __construct($config, Manager $manager)
     {
         if (! is_null($config)) {
-            $this->zeromq = zeromq()->make($this->withDefaults($config));
+            $this->zeromq = $manager->make($this->withDefaults($config));
             $this->open = true;
         }
     }

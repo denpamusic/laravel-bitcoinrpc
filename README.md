@@ -5,7 +5,7 @@
 [![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc) [![Code Climate](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/gpa.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc) <a href="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/coverage"><img src="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/coverage.svg" /></a>
 
 ## About
-This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
+This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.  
 It's based on [php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
 
 ## Installation
@@ -37,7 +37,7 @@ You also might want to add facade to $aliases array in `/config/app.php`.
 ```
 
 ## Configuration
-You can use [Environment Configuration](https://laravel.com/docs/master/configuration#environment-configuration) file to configure bitcoind client.
+You can use [Environment Configuration](https://laravel.com/docs/master/configuration#environment-configuration) file to configure bitcoind client.  
 You must have at least following parameters defined:
 ```
 BITCOIND_USER=(rpcuser from bitcoin.conf)
@@ -178,7 +178,7 @@ class BitcoinController extends Controller
 ```
 
 ### Multiple Instances
-You can use multiple configurations to connect to different bitcoin or even altcoin daemons.
+You can use multiple configurations to connect to different bitcoin or even altcoin daemons.  
 To do this you'll need to open `config/bitcoind.php` file and add new keys containing connection data (see litecoind example in [config file](https://github.com/denpamusic/laravel-bitcoinrpc/blob/multi-instance/config/config.php#L85))  
 You can then call specific configuration by passing it's name as parameter with usual methods (see examples below)
 ```php
@@ -248,9 +248,9 @@ class CoinController extends Controller
 
 ## ZeroMQ
 ZeroMQ support is available since v1.2.5.  
-To use zeromq, daemon must be compiled with zmq support.  
-In order to check this run `(bitcoind -h | grep -q zmq) && echo "ZeroMQ support available"`.  
-If you get "ZeroMQ support available" then you can use zeromq.
+To use ZeroMQ, daemon must be compiled with libzmq.  
+In order to check this, run `(bitcoind -h | grep -q zmq) && echo "ZeroMQ support available"`.  
+If you get "ZeroMQ support available" then you can use ZeroMQ.  
 
 Set the following options in bitcoind.conf (host and port can be different):
 ```
@@ -262,9 +262,9 @@ zmqpubrawtx=tcp://127.0.0.1:28332
 in `config/bitcoind.conf` set 'zeromq' key:
 ```
     'default' => [
-    	...
+        ...
         'zeromq' => [
-        	'host' => '127.0.0.1',
+            'host' => '127.0.0.1',
             'port' => 28332,
         ],
     ],
@@ -273,12 +273,12 @@ in `config/bitcoind.conf` set 'zeromq' key:
 Now you can subscribe to ZeroMQ topics using following syntax:
 ```php
 bitcoind()->on('hashblock', function ($blockhash, $sequence) {
-	// $blockhash var now contains block hash
+    // $blockhash var now contains block hash
     // of newest block broadcasted by daemon
     $block = bitcoind()->getBlock($blockhash);
-    
+
     printf(
-    	"New block %u found. Contains %u transactions.\n",
+        "New block %u found. Contains %u transactions.\n",
         $block['height'],
         $block->count('tx')
     );

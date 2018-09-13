@@ -11,7 +11,7 @@ class ClientWrapper extends Client
      *
      * @var \Denpa\Bitcoin\ZeroMQ\Connection
      */
-    protected $zeromq;
+    protected $connection;
 
     /**
      * Constructs new client wrapper.
@@ -22,7 +22,10 @@ class ClientWrapper extends Client
      */
     public function __construct(array $config)
     {
-        $this->zeromq = new ZeroMQ\Connection(Arr::pull($config, 'zeromq'));
+        $this->connection = new ZeroMQ\Connection(
+            Arr::pull($config, 'zeromq'),
+            app()->make('Denpa\ZeroMQ\Manager')
+        );
         parent::__construct($config);
     }
 
@@ -36,6 +39,6 @@ class ClientWrapper extends Client
      */
     public function on($topic, callable $callback)
     {
-        $this->zeromq->add(new ZeroMQ\Listener($topic, $callback));
+        $this->connection->add(new ZeroMQ\Listener($topic, $callback));
     }
 }

@@ -1,72 +1,12 @@
 <?php
 
 use Denpa\Bitcoin\ClientFactory;
-use Orchestra\Testbench\TestCase;
-use Denpa\Bitcoin\Traits\Bitcoind;
 use GuzzleHttp\Client as GuzzleHttp;
 use Denpa\Bitcoin\Client as BitcoinClient;
 use Denpa\Bitcoin\Facades\Bitcoind as BitcoindFacade;
 
 class BitcoindTest extends TestCase
 {
-    use Bitcoind;
-
-    /**
-     * Get package providers.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     *
-     * @return array
-     */
-    protected function getPackageProviders($app)
-    {
-        return [
-            \Denpa\Bitcoin\Providers\ServiceProvider::class,
-        ];
-    }
-
-    /**
-     * Get package aliases.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     *
-     * @return array
-     */
-    protected function getPackageAliases($app)
-    {
-        return [
-            'Bitcoind' => 'Denpa\Bitcoin\Facades\Bitcoind',
-        ];
-    }
-
-    /**
-     * Define environment setup.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     *
-     * @return void
-     */
-    protected function getEnvironmentSetUp($app)
-    {
-        $app['config']->set('bitcoind.default', [
-            'scheme'   => 'http',
-            'host'     => 'localhost',
-            'port'     => 8332,
-            'user'     => 'testuser',
-            'password' => 'testpass',
-            'ca'       => null,
-        ]);
-
-        $app['config']->set('bitcoind.litecoin', [
-            'scheme'   => 'http',
-            'host'     => 'localhost',
-            'port'     => 9332,
-            'user'     => 'testuser2',
-            'password' => 'testpass2',
-            'ca'       => null,
-        ]);
-    }
-
     /**
      * Checks if client config was correctly set.
      *
