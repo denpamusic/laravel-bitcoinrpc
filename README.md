@@ -1,5 +1,4 @@
 # Bitcoin JSON-RPC Service Provider for Laravel
-
 [![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
 [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
 [![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc)
@@ -11,12 +10,21 @@
 This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.  
 It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
 
-## Requirements
-* PHP 7.0 or higher
-* Laravel 5.1 or higher
+## Usage
+This package provides simple and intuitive API to make RPC calls to Bitcoin Core (and some altcoins)
+```php
+$hash = '000000000001caba23d5a17d5941f0c451c4ac221cbaa6c60f27502f53f87f68';
+$block = bitcoind()->getBlock($hash);
+var_dump($block->get());
+```
+Check [Documentation](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md) for more information and examples.
 
 ## Documentation
 Documentation is available [here](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/README.md).
+
+## Requirements
+* PHP 7.0 or higher
+* Laravel 5.1 or higher
 
 ## License
 This product is distributed under the [MIT license](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/LICENSE).
