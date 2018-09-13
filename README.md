@@ -246,7 +246,7 @@ class CoinController extends Controller
 }
 ```
 
-## ZeroMQ
+### ZeroMQ
 ZeroMQ support is available since v1.2.5.  
 To use ZeroMQ, daemon must be compiled with libzmq.  
 In order to check this, run `(bitcoind -h | grep -q zmq) && echo "ZeroMQ support available"`.  
