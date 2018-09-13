@@ -50,7 +50,7 @@ class Listener
      */
     public function listenOn(ZMQConnection $connection)
     {
-        $connection->subscribe([ $this->topic ], function ($message) {
+        $connection->subscribe([$this->topic], function ($message) {
             return $this->onSuccess($message);
         });
 

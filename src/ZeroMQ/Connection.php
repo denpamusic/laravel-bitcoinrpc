@@ -5,7 +5,7 @@ namespace Denpa\Bitcoin\ZeroMQ;
 class Connection
 {
     /**
-     * Is connection open
+     * Is connection open.
      *
      * @var bool
      */
