@@ -2,11 +2,15 @@
 
 [![Join the chat at https://gitter.im/laravel-bitcoinrpc/Lobby](https://badges.gitter.im/laravel-bitcoinrpc/Lobby.svg)](https://gitter.im/laravel-bitcoinrpc/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc) [![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc) [![Code Climate](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/gpa.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc) <a href="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/coverage"><img src="https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/coverage.svg" /></a>
+[![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
+[![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
+[![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc)
+[![Code Climate](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/gpa.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc)
+[![Code Coverage](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/coverage.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/coverage)
 
 ## About
 This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.  
-It's based on [php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
+It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
 
 ## Installation
 Run ```php composer.phar require denpa/laravel-bitcoinrpc``` in your project directory or add following lines to composer.json
@@ -264,7 +268,7 @@ zmqpubhashblock=tcp://127.0.0.1:28332
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28332
 ```
-in `config/bitcoind.conf` set 'zeromq' key:
+in `config/bitcoind.php` set 'zeromq' key:
 ```
     'default' => [
         ...

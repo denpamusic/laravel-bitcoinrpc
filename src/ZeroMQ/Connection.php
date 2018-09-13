@@ -24,6 +24,7 @@ class Connection
      * Constructs new ZeroMQ connection.
      *
      * @param  array|null  $config
+     * @param  \Denpa\ZeroMQ\Manager  $manager
      *
      * @return void
      */
