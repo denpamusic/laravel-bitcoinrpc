@@ -9,6 +9,6 @@ All altcoins that forked after or include [PR 8694](https://github.com/bitcoin/b
 To make multi-wallet call you'll need to use `wallet($filename)` method to specify wallet file name.  
 In the example below we'll get balance of `wallet2.dat` wallet:
 ```php
-$balance bitcoind()->wallet('wallet2.dat')->getBalance();
+$balance = bitcoind()->wallet('wallet2.dat')->getBalance();
 echo $balance->get();
 ```

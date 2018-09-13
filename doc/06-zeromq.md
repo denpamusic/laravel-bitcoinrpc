@@ -11,7 +11,7 @@ php composer.phar require denpa/laravel-zeromq
 Your Bitcoin Core must be compiled with libzmq (many distributions do).
 
 In order to check this, run `(bitcoind -h | grep -q zmq) && echo "ZeroMQ support available"`.  
-If you get "ZeroMQ support available" then you can use ZeroMQ otherwise please compile
+If you get "ZeroMQ support available" then you can use ZeroMQ otherwise please [build](https://github.com/bitcoin/bitcoin/blob/master/doc/build-unix.md) Bitcoin Core with zmq support yourself.
 
 Set the following options in bitcoind.conf (host and port can be different):
 ```
