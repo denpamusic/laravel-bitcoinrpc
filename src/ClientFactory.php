@@ -49,6 +49,7 @@ class ClientFactory
             'user'     => null,
             'password' => null,
             'ca'       => null,
+            'zeromq'   => null,
         ], $config);
     }
 
@@ -109,7 +110,35 @@ class ClientFactory
      */
     public function make(array $config = [])
     {
+        if (class_exists('Denpa\\ZeroMQ\\Manager')) {
+            // client wrapper with zeromq support
+            return new ClientWrapper($config);
+        }
+
         return new BitcoinClient($config);
+    }
+
+    /**
+     * Listen for zeromq events.
+     * Requires denpa/laravel-zeromq package and Bitcoin Core
+     * should be compiled with ZeroMQ support.
+     *
+     * @param  array     $events
+     * @param  callable  $callback
+     *
+     * @return void
+     */
+    public function on(array $events, callable $callback)
+    {
+        $allowed_topics = ['rawtx', 'rawblock', 'hashtx', 'hashblock'];
+
+        $topics = array_intersect_key($topics, array_flip($allowed_topics));
+
+        foreach ($topics as $topic) {
+            $this->zeromq->on($topic, $callback);
+        }
+
+        zeromq()->run();
     }
 
     /**

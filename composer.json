@@ -29,6 +29,9 @@
             "src/helpers.php"
         ]
     },
+    "suggest": {
+        "denpa/laravel-zeromq": "Required to subscribe to zeromq broadcasts.",
+    },
     "extra": {
         "laravel": {
             "providers": [
