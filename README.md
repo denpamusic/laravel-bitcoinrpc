@@ -284,6 +284,7 @@ bitcoind()->on('hashblock', function ($blockhash, $sequence) {
     );
 });
 ```
+For more information about ZeroMQ please visit [Documentation](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md).
 
 ## License
 
