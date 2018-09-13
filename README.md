@@ -179,7 +179,7 @@ class BitcoinController extends Controller
 
 ### Multiple Instances
 You can use multiple configurations to connect to different bitcoin or even altcoin daemons.
-To do this you'll need to open `config/bitcoind.php` file and add new keys containing connection data (see litecoind example in [config file](https://github.com/denpamusic/laravel-bitcoinrpc/blob/multi-instance/config/config.php#L85))
+To do this you'll need to open `config/bitcoind.php` file and add new keys containing connection data (see litecoind example in [config file](https://github.com/denpamusic/laravel-bitcoinrpc/blob/multi-instance/config/config.php#L85))  
 You can then call specific configuration by passing it's name as parameter with usual methods (see examples below)
 ```php
 <?php
@@ -244,6 +244,45 @@ class CoinController extends Controller
       return response()->json($blockInfo->get());
    }
 }
+```
+
+## ZeroMQ
+ZeroMQ support is available since v1.2.5.  
+To use zeromq, daemon must be compiled with zmq support.  
+In order to check this run `(bitcoind -h | grep -q zmq) && echo "ZeroMQ support available"`.  
+If you get "ZeroMQ support available" then you can use zeromq.
+
+Set the following options in bitcoind.conf (host and port can be different):
+```
+zmqpubhashtx=tcp://127.0.0.1:28332
+zmqpubhashblock=tcp://127.0.0.1:28332
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28332
+```
+in `config/bitcoind.conf` set 'zeromq' key:
+```
+    'default' => [
+    	...
+        'zeromq' => [
+        	'host' => '127.0.0.1',
+            'port' => 28332,
+        ],
+    ],
+```
+
+Now you can subscribe to ZeroMQ topics using following syntax:
+```php
+bitcoind()->on('hashblock', function ($blockhash, $sequence) {
+	// $blockhash var now contains block hash
+    // of newest block broadcasted by daemon
+    $block = bitcoind()->getBlock($blockhash);
+    
+    printf(
+    	"New block %u found. Contains %u transactions.\n",
+        $block['height'],
+        $block->count('tx')
+    );
+});
 ```
 
 ## License
