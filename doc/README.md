@@ -6,16 +6,17 @@ Table of Contents
 -------------
 * [Installation](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/00-installation.md)
 * [Configuration](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/01-configuration.md)
-* [Usage](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md)
-  * [Helper Function](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md#helper-function)
-  * [Trait](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md#trait)
-  * [Facade](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md#facade)
-  * [Automatic Injection](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md#automatic-injection)
-* [Multiple Instances](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-multi-instances.md)
-* [Response](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md)
-  * [Helper Methods](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#helper-methods)
-* [Multi-wallet](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/05-multi-wallet.md)
-* [ZeroMQ](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-zeromq.md)
+* [Multiple Daemons](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-multiple-daemons.md)
+* [Usage](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-usage.md)
+  * [Helper](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-usage.md#helper)
+  * [Trait](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-usage.md#trait)
+  * [Facade](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-usage.md#facade)
+  * [Automatic Injection](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-usage.md#automatic-injection)
+* [Multi-Wallet Requests](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-multi-wallet.md)
+* [Asynchronous Requests](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/05-async.md)
+* [Response](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md)
+  * [Helper Methods](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#helper-methods)
+* [ZeroMQ](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/07-zeromq.md)
 
 ## Requirements
 * PHP 7.0 or higher

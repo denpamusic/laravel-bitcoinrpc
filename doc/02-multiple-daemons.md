@@ -1,13 +1,12 @@
-Multiple Instance
+Multiple Daemons
 ======================
-
 You can use multiple configurations to connect to different bitcoin or even altcoin daemons.
 
 You'll need define a new connection in `./config/bitcoind.php` (see [example](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/config/config.php#L104))
 
-Then call specific configuration by passing it's name as parameter with usual methods as explained in [Usage](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md) section and in examples below.
+Then call specific configuration by passing it's name as parameter with usual methods as explained in [Usage](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-usage.md) section and in examples below.
 
-### Helper Function
+### Helper Method
 Following example illustrates the use of `bitcoind()` helper to make [getBlock()](https://bitcoin.org/en/developer-reference#getblock) call to the `litecoin` configuration defined in `./config/bitcoind.php`:
 ```php
 <?php

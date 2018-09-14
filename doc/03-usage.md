@@ -1,14 +1,13 @@
 Usage
 ======================
-
 denpa/laravel-bitcoinrpc packages provides various way to make JSON-RPC calls.  
 Each have their own positives and negatives depending on usage.
 
-### Helper Function
+### Helper
 Helper functions provide an easy way to access RPC functions.  
 They are however makes testing somewhat difficult and can cause name collisions.
 
-The following example illustrates use of `bitcoind()` helper function to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
+The following example illustrates use of `bitcoind()` helper to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
 ```php
 <?php
 

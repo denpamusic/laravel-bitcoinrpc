@@ -1,6 +1,5 @@
 Configuration
 ======================
-
 ### Environment Configuration (.env)
 You can use [Environment Configuration](https://laravel.com/docs/master/configuration#environment-configuration) file to configure laravel-bitcoind.
 
