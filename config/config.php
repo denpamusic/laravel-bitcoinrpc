@@ -75,7 +75,9 @@ return [
         |--------------------------------------------------------------------------
         | If you're using SSL (https) to connect to your Bitcoin Core
         | you can specify custom ca package to verify against.
-        | Note that using Bitcoin JSON-RPC over SSL is strongly discouraged.
+        | Note that you'll need to setup secure tunnel or reverse proxy
+        | in order to access Bitcoin Core via SSL.
+        | See: https://bitcoin.org/en/release/v0.12.0#rpc-ssl-support-dropped
         |
         */
 
