@@ -9,8 +9,10 @@ return [
         |--------------------------------------------------------------------------
         | URI scheme of Bitcoin Core's JSON-RPC server.
         |
-        | Use https to enable SSL connections with Core,
-        | but this is strongly discouraged by developers.
+        | Use 'https' scheme for SSL connection.
+        | Note that you'll need to setup secure tunnel or reverse proxy
+        | in order to access Bitcoin Core via SSL.
+        | See: https://bitcoin.org/en/release/v0.12.0#rpc-ssl-support-dropped
         |
         */
 
