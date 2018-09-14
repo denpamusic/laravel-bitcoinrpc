@@ -34,17 +34,17 @@ echo $block('tx.0');
 
 Response Methods
 --------
-* [`get()`](#get())
-* [`first()`](#first())
-* [`last()`](#last())
-* [`count()`](#count())
-* [`has()`](#has())
-* [`exists()`](#exists())
-* [`contains()`](#constains())
-* [`values()`](#values())
-* [`keys()`](#keys())
-* [`random()`](#random())
-* [`sum()`](#sum())
+* [`get()`](#get)
+* [`first()`](#first)
+* [`last()`](#last)
+* [`count()`](#count)
+* [`has()`](#has)
+* [`exists()`](#exists)
+* [`contains()`](#constains)
+* [`values()`](#values)
+* [`keys()`](#keys)
+* [`random()`](#random)
+* [`sum()`](#sum)
 
 
 ### `get()`
