@@ -17,8 +17,8 @@ bitcoind()->getBestBlockHashAsync([], function ($hash) {
 
 In example below, [getBlock()](https://bitcoin.org/en/developer-reference#getblock) and [getRawTransaction()](https://bitcoin.org/en/developer-reference#getrawtransaction) methods are executed in parallel.
 ```php
-$hash = '';
-$txid = '';
+$hash = '000000004b7701d94a3aa295aed12e1b25d8d6a9a0ae939fbe8bacc7fc22cf82';
+$txid = 'fc481a3e827523e3c42c55893baa3d0e16186d8738fd591b134c57450abfadb7';
 
 bitcoind()->getBlockAsync($hash, function ($block) {
     print_r($block->get());
