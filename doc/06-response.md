@@ -31,17 +31,17 @@ echo $block('tx.0');
 
 Helper Methods
 --------
-* [get](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#get)
-* [first](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#first)
-* [last](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#last)
-* [count](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#count)
-* [has](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#has)
-* [exists](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#exists)
-* [contains](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#constains)
-* [values](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#values)
-* [keys](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#keys)
-* [random](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#random)
-* [sum](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-response.md#sum)
+* [get](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#get)
+* [first](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#first)
+* [last](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#last)
+* [count](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#count)
+* [has](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#has)
+* [exists](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#exists)
+* [contains](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#constains)
+* [values](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#values)
+* [keys](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#keys)
+* [random](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#random)
+* [sum](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#sum)
 
 
 ### get
