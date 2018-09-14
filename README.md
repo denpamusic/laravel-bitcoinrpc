@@ -15,7 +15,7 @@ This package provides simple and intuitive API to make RPC calls to Bitcoin Core
 ```php
 $hash = '000000000001caba23d5a17d5941f0c451c4ac221cbaa6c60f27502f53f87f68';
 $block = bitcoind()->getBlock($hash);
-var_dump($block->get());
+dump($block->get());
 ```
 Check [Usage](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/02-usage.md) for more information and examples.
 

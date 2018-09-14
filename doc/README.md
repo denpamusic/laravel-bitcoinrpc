@@ -15,8 +15,9 @@ Table of Contents
 * [Multi-Wallet Requests](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/04-multi-wallet.md)
 * [Asynchronous Requests](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/05-async.md)
 * [Response](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md)
-  * [Helper Methods](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#helper-methods)
+  * [Response Methods](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/06-response.md#response-methods)
 * [ZeroMQ](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/07-zeromq.md)
+* [Helpers](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/08-helpers.md)
 
 ## Requirements
 * PHP 7.0 or higher
