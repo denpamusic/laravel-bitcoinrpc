@@ -1,3 +1,7 @@
+---
+permalink: /
+---
+
 Documentation
 ======================
 This documentation will (hopefully) guide you through installation and configuration process for this package. It covers many usage cases describing its pros and cons and providing examples.

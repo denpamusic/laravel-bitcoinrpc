@@ -1,3 +1,7 @@
+---
+permalink: /usage/
+---
+
 Usage
 ======================
 denpa/laravel-bitcoinrpc packages provides various way to make JSON-RPC calls.  

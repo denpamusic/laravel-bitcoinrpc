@@ -1,3 +1,7 @@
+---
+permalink: /install/
+---
+
 Installation
 ======================
 

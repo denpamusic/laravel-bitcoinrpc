@@ -1,3 +1,7 @@
+---
+permalink: /helpers/
+---
+
 Helpers
 ======================
 php-bitcoinrpc provides some helpful methods to assist with value handling.  

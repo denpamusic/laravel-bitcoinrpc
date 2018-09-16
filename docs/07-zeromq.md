@@ -1,3 +1,7 @@
+---
+permalink: /zeromq/
+---
+
 ZeroMQ
 ======================
 ZeroMQ support is available since v1.2.5 via [denpa/laravel-zeromq](https://packagist.org/packages/denpa/laravel-zeromq) package.

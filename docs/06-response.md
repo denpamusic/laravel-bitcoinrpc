@@ -1,3 +1,7 @@
+---
+permalink: /response/
+---
+
 Response
 ======================
 Making a call returns instance of `Denpa\Bitcoin\BitcoindResponse` class which provides helper methods similar to Laravel's own Collections.

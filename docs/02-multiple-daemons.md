@@ -1,3 +1,7 @@
+---
+permalink: /multiple-daemons/
+---
+
 Multiple Daemons
 ======================
 You can use multiple configurations to connect to different bitcoin or even altcoin daemons.

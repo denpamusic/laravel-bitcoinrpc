@@ -1,3 +1,7 @@
+---
+permalink: /async-requests/
+---
+
 Asynchronous Requests
 ======================
 You can call RPC method asynchronously by appending method name with 'Async'.  
