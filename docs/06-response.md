@@ -67,14 +67,18 @@ print_r($block->get());
 Gets first element in array. Especially useful when paired with path lookup.
 ```php
 // $block = bitcoind()->getBlock($blockhash);
-echo $block('tx')->first(); // first txid in the block
+echo $block()->first('tx'); // first txid in the block
+
+echo $block('tx')->first(); // same as above
 ```
 
 ### `last()`
 Gets last element in array. Especially useful when paired with path lookup.
 ```php
 // $block = bitcoind()->getBlock($blockhash);
-echo $block('tx')->last(); // last txid in the block
+echo $block()->last('tx'); // last txid in the block
+
+echo $block('tx')->last(); // same as above
 ```
 
 ### `count()`
@@ -82,6 +86,8 @@ Counts how many elements are in array.
 ```php
 // $block = bitcoind()->getBlock($blockhash);
 echo $block->count('tx');
+
+echo $block('tx')->count(); // same as above
 ```
 
 ### `has()`
@@ -130,6 +136,8 @@ Gets random element(s). Especially useful when paired with path lookup.
 ```php
 // $block = bitcoind()->getBlock($blockhash);
 echo $block('tx')->random(/* number of elements to get */ 2);
+
+echo $block()->random(2, 'tx'); // same as above
 ```
 
 ### `sum()`
