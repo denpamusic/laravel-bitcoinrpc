@@ -8,7 +8,7 @@ You must have at least following options defined:
 BITCOIND_USER=(rpcuser from bitcoin.conf)
 BITCOIND_PASSWORD=(rpcpassword from bitcoin.conf)
 ```
-See `./config/bitcoind.php` and [.env.example](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/.env.example) files to learn more about supported options and their descriptions.
+See `./config/bitcoind.php` and [.env.example](https://github.com/denpamusic/laravel-bitcoinrpc/blob/masterenv.example) files to learn more about supported options and their descriptions.
 
 ### Config file
 You can also directly define your configurations in `config/bitcoind.php`:

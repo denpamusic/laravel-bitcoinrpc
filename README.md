@@ -17,10 +17,10 @@ $hash = '000000000001caba23d5a17d5941f0c451c4ac221cbaa6c60f27502f53f87f68';
 $block = bitcoind()->getBlock($hash);
 dump($block->get());
 ```
-Check [Usage](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/03-usage.md) for more information and examples.
+Check [Usage](https://laravel-bitcoinrpc.denpa.pro/03-usage.html) for more information and examples.
 
 ## Documentation
-Documentation is available [here](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/doc/README.md).
+Documentation is available [here](https://laravel-bitcoinrpc.denpa.pro).
 
 ## Requirements
 * PHP 7.0 or higher
