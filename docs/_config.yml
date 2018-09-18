@@ -8,13 +8,16 @@ baseurl: "/"
 name: "Denis Paavilainen"
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-search: true
 
 include:
   - _pages
 exclude:
   - Gemfile
   - Gemfile.lock
+
+# Search
+search: true
+search_full_content: true
 
 # Author
 author:

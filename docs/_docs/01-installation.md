@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 permalink: /docs/install/
-excerpt: "How to install laravel-bitcoinrpc package."
+excerpt: "How to install laravel-bitcoinrpc package via composer."
 classes: wide
 ---
 Preparation
@@ -10,14 +10,10 @@ To install this package you'll need installed and working Composer manager.
 Please visit [Official Composer Documentation](https://getcomposer.org/doc/00-intro.md) to learn installation procedure for your OS.
 
 ### Installing package
-
-Run ```php composer.phar require denpa/laravel-bitcoinrpc``` in your project directory or add following lines to composer.json
-```json
-"require": {
-    "denpa/laravel-bitcoinrpc": "^1.2"
-}
+Install package by running composer in your Laravel directory.
 ```
-and run ```php composer.phar update```.
+composer require denpa/laravel-bitcoinrpc "^1.2"
+```
 
 ### Registering Provider
 
