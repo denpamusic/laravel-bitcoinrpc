@@ -1,13 +1,12 @@
 ---
-permalink: /install/
+title: "Installation"
+permalink: /docs/install/
+excerpt: "How to quickly install and setup Minimal Mistakes for use with GitHub Pages."
+classes: wide
 ---
-
-Installation
-======================
-
 Preparation
 -------------
-To install this package you'll need installed and working Composer manager.  
+To install this package you'll need installed and working Composer manager.
 Please visit [Official Composer Documentation](https://getcomposer.org/doc/00-intro.md) to learn installation procedure for your OS.
 
 ### Installing package
@@ -40,7 +39,7 @@ in your project directory.
 
 ### Registering Facade (optional)
 
-Bitcoind facade provides a convenient way to make JSON-RPC calls from anywhere in your code.  
+Bitcoind facade provides a convenient way to make JSON-RPC calls from anywhere in your code.
 To register facade, append it's record to the aliases list in `./config/app.php` as in following examle:
 ```php
 'aliases' => [

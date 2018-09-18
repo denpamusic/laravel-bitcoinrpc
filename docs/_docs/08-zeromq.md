@@ -1,11 +1,10 @@
 ---
-permalink: /zeromq/
+title: "ZeroMQ"
+permalink: /docs/zeromq/
+toc: true
 ---
-
-ZeroMQ
-======================
 ZeroMQ support is available since v1.2.5 via [denpa/laravel-zeromq](https://packagist.org/packages/denpa/laravel-zeromq) package.
-### denpa/laravel-zeromq Installation
+### Installation
 You'll need to install laravel-zeromq package to use ZeroMQ features:
 ```
 php composer.phar require denpa/laravel-zeromq

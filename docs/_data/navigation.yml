@@ -1,0 +1,37 @@
+main:
+  - title: "About"
+    url: /
+  - title: "Documentation"
+    url: /docs/install/
+  - title: "Changelog"
+    url: /changelog/
+  - title: "License"
+    url: /license/
+
+docs:
+  - title: "Installation"
+    url: /docs/install/
+  - title: "Configuration"
+    children:
+      - title: "Simple Configuration"
+        url: /docs/config/simple/
+      - title: "Multiple Daemons"
+        url: /docs/config/multiple-daemons/
+  - title: "Making Requests"
+    children:
+      - title: "Standard Request"
+        url: /docs/request/standard/
+      - title: "Asynchronous Request"
+        url: /docs/request/async/
+      - title: "Multi-Wallet Request"
+        url: /docs/request/multi-wallet/
+  - title: "Working with Response"
+    children:
+      - title: "Accessing Properties"
+        url: /docs/response/access
+      - title: "Response Methods"
+        url: /docs/response/methods
+  - title: "ZeroMQ"
+    url: /docs/zeromq/
+  - title: "Bitcoin Helpers"
+    url: /docs/bitcoin-helpers/

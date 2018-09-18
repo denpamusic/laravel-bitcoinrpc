@@ -1,10 +1,9 @@
 ---
-permalink: /helpers/
+title: "Bitcoin Helpers"
+permalink: /docs/bitcoin-helpers/
+classes: wide
 ---
-
-Helpers
-======================
-php-bitcoinrpc provides some helpful methods to assist with value handling.  
+php-bitcoinrpc package provides handfull of methods to assist with value handling.
 All those methods are available in `Denpa\Bitcoin` namespace.
 
 #### `to_bitcoin()`

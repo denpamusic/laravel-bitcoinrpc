@@ -1,29 +1,18 @@
-# Bitcoin JSON-RPC Service Provider for Laravel
+---
+title: "About"
+permalink: /
+---
 [![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
 [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
 [![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc)
 [![Code Climate](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/gpa.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc)
 [![Code Coverage](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/coverage.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/coverage)
-[![Join the chat at https://gitter.im/laravel-bitcoinrpc/Lobby](https://badges.gitter.im/laravel-bitcoinrpc/Lobby.svg)](https://gitter.im/laravel-bitcoinrpc/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## About
 This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
 It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
 
-## Installation
-See [here](https://laravel-bitcoinrpc.denpa.pro/docs/install/).
-
-## Usage
-This package provides simple and intuitive API to make RPC calls to Bitcoin Core (and some altcoins)
-```php
-$hash = '000000000001caba23d5a17d5941f0c451c4ac221cbaa6c60f27502f53f87f68';
-$block = bitcoind()->getBlock($hash);
-dump($block->get());
-```
-Check [Usage](https://laravel-bitcoinrpc.denpa.pro/docs/request/standard/) for more information and examples.
-
-## Documentation
-Documentation is available [here](https://laravel-bitcoinrpc.denpa.pro/).
+[Documentation]({{ 'docs/install' | relative_link }}) will (hopefully) guide you through installation and configuration process for this package.
+It covers many usage cases describing their pros and cons and providing examples.
 
 ## Requirements
 * PHP 7.0 or higher
@@ -34,8 +23,9 @@ This product is distributed under the [MIT license](https://github.com/denpamusi
 
 ## Donations
 
-If you like this project, please consider donating:<br>
-**BTC**: 3L6dqSBNgdpZan78KJtzoXEk9DN3sgEQJu<br>
+![3L6dqSBNgdpZan78KJtzoXEk9DN3sgEQJu]({{ site.url }}{{ site.baseurl }}/assets/images/qr.png){: .align-left}
+If you like this project, please consider donating:  
+**BTC**: 3L6dqSBNgdpZan78KJtzoXEk9DN3sgEQJu  
 **Bech32**: bc1qyj8v6l70c4mjgq7hujywlg6le09kx09nq8d350
 
 ❤Thanks for your support!❤

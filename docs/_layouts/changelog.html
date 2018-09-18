@@ -1,0 +1,24 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+{% assign entries = site.posts | sort: 'title' | reverse %}
+
+<div class="entries-{{ page.entries_layout }}">
+    {% for version in entries %}
+        <div class="{{ include.type | default: "list" }}__item">
+          <article class="archive__item">
+            <h2 class="archive__item-title" itemprop="headline">
+                {{ site.title }} v{{ version.title }} <a href="https://github.com/denpamusic/laravel-bitcoinrpc/releases/tag/v{{ version.title }}" rel="permalink"><i class="fab fa-fw fa-github-square" aria-hidden="true" title="Visit on GitHub"></i><span class="sr-only">GitHub</span></a>
+            </h2>
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {{ version.date | date_to_string }}</p>
+            <section class="page__content" itemprop="text">
+                <div>{{ version.content }}</div>
+            </section>
+          </article>
+        </div>
+    {% endfor %}
+</div>
+<a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
