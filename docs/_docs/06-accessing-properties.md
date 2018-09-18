@@ -1,6 +1,7 @@
 ---
 title: "Accessing Properties"
 permalink: /docs/response/access
+excerpt: "Accessing properties of response object."
 classes: wide
 ---
 Making a call returns instance of `Denpa\Bitcoin\BitcoindResponse` class which provides helper methods similar to Laravel's own Collections.

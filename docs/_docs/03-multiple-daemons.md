@@ -1,6 +1,7 @@
 ---
 title: "Multiple Daemons"
 permalink: /docs/config/multiple-daemons/
+excerpt: "Configuring laravel-bitcoinrpc to work with multiple daemons."
 classes: wide
 ---
 You can use multiple configurations to connect to different bitcoin or even altcoin daemons.

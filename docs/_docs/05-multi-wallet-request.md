@@ -1,6 +1,7 @@
 ---
 title: "Multi-Wallet Request"
 permalink: /docs/request/multi-wallet/
+excerpt: "Making multi-wallet request via laravel-bitcoinrpc."
 classes: wide
 ---
 Since v1.2.4 laravel-phpbitcoinrpc supports multi-wallet requests as decribed in [Release Notes](https://bitcoin.org/en/release/v0.15.0.1#multi-wallet-support) for Bitcoin Core v0.15.0.1.

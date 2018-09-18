@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 permalink: /docs/install/
-excerpt: "How to quickly install and setup Minimal Mistakes for use with GitHub Pages."
+excerpt: "How to install laravel-bitcoinrpc package."
 classes: wide
 ---
 Preparation

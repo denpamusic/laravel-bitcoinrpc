@@ -1,6 +1,7 @@
 ---
 title: "Asynchronous Request"
 permalink: /docs/request/async/
+excerpt: "Making asynchronous request via laravel-bitcoinrpc."
 classes: wide
 ---
 You can call RPC method asynchronously by appending method name with 'Async'.

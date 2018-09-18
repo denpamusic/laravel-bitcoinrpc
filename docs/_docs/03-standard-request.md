@@ -1,6 +1,7 @@
 ---
 title: "Standard Request"
 permalink: /docs/request/standard/
+excerpt: "Making standard synchronous request via laravel-bitcoinrpc."
 toc: true
 toc_label: "Make request with"
 ---

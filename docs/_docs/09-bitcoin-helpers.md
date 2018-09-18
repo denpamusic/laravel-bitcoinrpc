@@ -1,6 +1,7 @@
 ---
 title: "Bitcoin Helpers"
 permalink: /docs/bitcoin-helpers/
+excerpt: "List of helper methods provided by php-bitcoinrpc package."
 classes: wide
 ---
 php-bitcoinrpc package provides handfull of methods to assist with value handling.

@@ -1,6 +1,7 @@
 ---
 title: "Response Methods"
 permalink: /docs/response/methods
+excerpt: "List of methods provided by response object."
 toc: true
 toc_label: "Methods"
 ---

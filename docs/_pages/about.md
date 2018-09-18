@@ -1,5 +1,6 @@
 ---
 title: "About"
+excerpt: "Information about laravel-bitcoinrpc project."
 permalink: /
 ---
 [![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)

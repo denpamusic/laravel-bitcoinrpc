@@ -1,6 +1,7 @@
 ---
 title: "Simple Configuration"
 permalink: /docs/config/simple/
+excerpt: "Simple laravel-bitcoinrpc configuration to work with single daemon."
 classes: wide
 ---
 ### Environment Configuration (.env)
