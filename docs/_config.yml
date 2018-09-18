@@ -23,7 +23,6 @@ search_full_content: true
 author:
   name : "Denis Paavilainen"
   bio : "My PGP key: https://pgp.denpa.pro/ Fingerprint = B371 A23C C449 703F F1BF 0927 9CF6 463C BF75 37E8"
-  location : "Saint-Petersburg, Russia"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

@@ -10,7 +10,7 @@ To install this package you'll need installed and working Composer manager.
 Please visit [Official Composer Documentation](https://getcomposer.org/doc/00-intro.md) to learn installation procedure for your OS.
 
 ### Installing package
-Install package by running composer in your Laravel directory.
+Install package by running composer in your project directory.
 ```
 composer require denpa/laravel-bitcoinrpc "^1.2"
 ```
