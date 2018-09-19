@@ -1,8 +1,7 @@
 ---
-title: "License"
+title: "The MIT License"
 permalink: /license/
 ---
-The MIT License
 
 Copyright (c) 2017-2018 Netfleet Co. Ltd.
 

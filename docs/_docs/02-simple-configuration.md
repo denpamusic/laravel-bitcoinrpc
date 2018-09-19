@@ -15,7 +15,7 @@ BITCOIND_PASSWORD=(rpcpassword from bitcoin.conf)
 See `./config/bitcoind.php` and [.env.example](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/.env.example) files to learn more about supported options and their descriptions.
 
 ### Configuration file
-You can also directly define your configuration in `config/bitcoind.php`:
+Alternatively, you can directly define your configuration in `config/bitcoind.php`:
 ```php
 <?php
 

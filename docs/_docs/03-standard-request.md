@@ -5,14 +5,18 @@ excerpt: "Making standard synchronous request via laravel-bitcoinrpc."
 toc: true
 toc_label: "Make request with"
 ---
-The package provides various way to make JSON-RPC calls.
-Each have their own positives and negatives depending on usage.
+The package provides various way to call <abbr title="JavaScript Object Notation Remote Procedure Call">JSON-RPC</abbr> methods.
+
+You can use them interchangeably, if needed.
+However, if you don't plan to unit-test your application, helper method is preferred as it's easiest one to use.
+
+_Note: method names are case-insensitive, so getBlock() and getblock() will yield the same result._
 
 ### Helper
-Helper functions provide an easy way to access RPC functions.
-They are however makes testing somewhat difficult and can cause name collisions.
+Helper functions provide an easy way to call JSON-RPC methods.
+They are, however, make testing somewhat difficult and can cause name collisions.
 
-The following example illustrates use of `bitcoind()` helper to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
+The following example illustrates the use of `bitcoind()` helper to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method.
 ```php
 <?php
 
@@ -35,9 +39,9 @@ class BitcoinController extends Controller
 ```
 
 ### Trait
-Traits are easier to handle since they can be easily interchangeable during testing or in production.
+Using traits makes a clear declaration of class dependence and, if needed, traits could be easily replaced via namespace.
 
-The following example illustrates use of `Denpa\Bitcoin\Traits\Bitcoind` trait to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
+The following example illustrates the use of `Denpa\Bitcoin\Traits\Bitcoind` trait to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method.
 ```php
 <?php
 
@@ -64,10 +68,10 @@ class BitcoinController extends Controller
 ```
 
 ### Facade
-Facades provide convenient way to make calls and laravel makes it somewhat easy to test with them.
-However they are using static calls which in some cases considered bad practice.
+Facades provide a convenient way to make calls and Laravel makes them [easy to mock](https://laravel.com/docs/master/mocking#mocking-facades).
+However, they are using static calls which in some cases might be undesirable.
 
-The following example illustrates use of `Denpa\Bitcoin\Facades\Bitcoind` facade to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
+The following example illustrates the use of `Denpa\Bitcoin\Facades\Bitcoind` facade to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
 ```php
 <?php
 
@@ -92,9 +96,9 @@ class BitcoinController extends Controller
 ```
 
 ### Automatic Injection
-Automatic injection are easiest of bunch to test and is considered by many to be preferred way to access class dependencies due to explicit declaration.
+Automatic injection are easiest of bunch to test and, as with traits, is considered by many to be preferred way to access class dependencies due to explicit declaration.
 
-The following example illustrates use automatic injection by type hinting `\Denpa\Bitcoin\ClientFactory` to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
+The following example illustrates the use of automatic injection by type-hinting `\Denpa\Bitcoin\ClientFactory` to call the [getBlock()](https://bitcoin.org/en/developer-reference#getblock) method:
 ```php
 <?php
 
@@ -120,10 +124,9 @@ class BitcoinController extends Controller
 ```
 
 #### Note on multiple configurations
-When using automatic injection method with more than one configuration defined in configuration file
+When using automatic injection with more than one configuration defined in config file,
 you should type-hint `Denpa\Bitcoin\ClientFactory` instead of `Denpa\Bitcoin\Client` to use
-client() method.  
-In this case example above becomes:
+client() method.
 ```php
 <?php
 
@@ -148,3 +151,5 @@ class LitecoinController extends Controller
    }
 }
 ```
+
+See [Multiple Daemons]({{ 'docs/config/multiple-daemons/' | relative_url }}) section to learn more about defining and using multiple configurations.

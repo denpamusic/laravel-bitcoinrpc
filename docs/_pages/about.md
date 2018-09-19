@@ -12,7 +12,7 @@ permalink: /
 This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
 It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
 
-[Documentation]({{ 'docs/install' | relative_link }}) will (hopefully) guide you through installation and configuration process for this package.
+[Documentation]({{ 'docs/install' | relative_url }}) will (hopefully) guide you through installation and configuration process for this package.
 It covers many usage cases describing their pros and cons and providing examples.
 
 ## Requirements
@@ -20,7 +20,7 @@ It covers many usage cases describing their pros and cons and providing examples
 * Laravel 5.1 or higher
 
 ## License
-This product is distributed under the [MIT license](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/LICENSE).
+This product is distributed under the [MIT license]({{ 'license' | relative_url }}).
 
 ## Donations
 

@@ -33,5 +33,5 @@ docs:
         url: /docs/response/methods
   - title: "ZeroMQ"
     url: /docs/zeromq/
-  - title: "Bitcoin Helpers"
-    url: /docs/bitcoin-helpers/
+  - title: "Conversion Helpers"
+    url: /docs/conversion-helpers/

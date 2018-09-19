@@ -5,13 +5,17 @@ excerpt: "List of methods provided by response object."
 toc: true
 toc_label: "Methods"
 ---
+BitcoindResponse class provides following methods.  
+They are similar to Laravel Collections and can be used
+for simple data filtering and manipulation.
+
 ### `get()`
-Gets value by key provided as dotted notation.
+Gets value by key provided as dot notation.
 ```php
 // $block = bitcoind()->getBlock($blockhash);
 echo $block->get('tx.0');
 ```
-When provided empty key returns whole array.
+When used with empty key, returns whole array.
 ```php
 // $block = bitcoind()->getBlock($blockhash);
 print_r($block->get());
@@ -94,10 +98,23 @@ echo $block('tx')->random(/* number of elements to get */ 2);
 echo $block()->random(2, 'tx'); // same as above
 ```
 
+### `flatten()`
+Flattens multi-dimensional array into single-dimensional one.
+For this example we'll use [listUnspent()](https://bitcoin.org/en/developer-reference#listunspent) method that returns a list of <abbr title="Unspent Transaction Output">UTXO</abbr> belonging to this wallet
+```php
+// $response = bitcoind()->listUnspent();
+
+// array of addresses with non-zero balance
+print_r($response->flatten('*.address'));
+```
+
 ### `sum()`
-Gets sum of values. For this example we'll use [listSinceBlock()](https://bitcoin.org/en/developer-reference#listsinceblock) method that returns all transaction affecting wallet from certain block (in this example - genesis)
+Gets sum of values.
+For this example we'll use [listSinceBlock()](https://bitcoin.org/en/developer-reference#listsinceblock) method that returns all transaction affecting wallet from certain block (in this example - genesis)
 ```php
 // $response = bitcoind()->listSinceBlock();
+
+// sum of transactions affecting this wallet
 echo $response->sum('transactions.*.amount');
 ```
 

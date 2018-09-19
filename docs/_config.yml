@@ -56,7 +56,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: version
+      layout: release
 
 # Footer
 footer:
@@ -69,7 +69,7 @@ footer:
       url: "https://gitter.im/laravel-bitcoinrpc/Lobby"
 
 # Output
-permalink: /version/:title
+permalink: /release/:title
 timezone: Europe/Moscow
 
 # Collections
@@ -80,9 +80,9 @@ collections:
 
 # Feed
 atom_feed:
-  path: "/versions.xml"
+  path: "/releases.xml"
 feed:
-  path: "versions.xml"
+  path: "releases.xml"
 
 # Conversion
 markdown: kramdown

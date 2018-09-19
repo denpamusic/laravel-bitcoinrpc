@@ -10,8 +10,30 @@
 This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
 It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrpc) project - fully unit-tested Bitcoin JSON-RPC client powered by GuzzleHttp.
 
-## Installation
-See [here](https://laravel-bitcoinrpc.denpa.pro/docs/install/).
+## Quick Installation
+1. Install package:
+```sh
+composer require denpa/laravel-bitcoinrpc "^1.2"
+```
+
+2. Add service provider and facade to `./config/app.php`
+```php
+...
+'providers' => [
+    ...
+    Denpa\Bitcoin\Providers\ServiceProvider::class,
+];
+...
+'aliases' => [
+    ...
+    'Bitcoind' => Denpa\Bitcoin\Facades\Bitcoind::class,
+];
+```
+3. Publish config file
+```sh
+php artisan vendor:publish --provider="Denpa\Bitcoin\Providers\ServiceProvider"
+```
+_Visit [Installation](https://laravel-bitcoinrpc.denpa.pro/docs/install/) for detailed installation guide._
 
 ## Usage
 This package provides simple and intuitive API to make RPC calls to Bitcoin Core (and some altcoins)
