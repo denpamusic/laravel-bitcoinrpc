@@ -21,8 +21,9 @@ search_full_content: true
 
 # Author
 author:
-  name : "Denis Paavilainen"
-  bio : "My PGP key: https://pgp.denpa.pro/ Fingerprint = B371 A23C C449 703F F1BF 0927 9CF6 463C BF75 37E8"
+  name: "Denis Paavilainen"
+  avatar: "/assets/images/logo.svg"
+  bio: "My PGP key: https://pgp.denpa.pro/ Fingerprint = B371 A23C C449 703F F1BF 0927 9CF6 463C BF75 37E8"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

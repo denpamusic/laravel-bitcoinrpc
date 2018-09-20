@@ -79,7 +79,7 @@ class ZeroMQTest extends TestCase
                 $callback([
                     'hashblock',
                     pack('H*', $blockhash),
-                    pack('I', 0x01)
+                    pack('I', 0x01),
                 ]);
             }));
 
@@ -111,14 +111,14 @@ class ZeroMQTest extends TestCase
                 $callback([
                     'hashblock',
                     pack('H', 0x00),
-                    pack('I', 0x01)
+                    pack('I', 0x01),
                 ]);
 
                 // sequence number 3
                 $callback([
                     'hashblock',
                     pack('H', 0x00),
-                    pack('I', 0x03)
+                    pack('I', 0x03),
                 ]);
             }));
 

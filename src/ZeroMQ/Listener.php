@@ -75,7 +75,7 @@ class Listener
         if ($this->sequence > 0 && (($this->sequence + 1) != $sequence)) {
             throw new UnexpectedValueException(
                 "Broken sequence on sequence number $sequence. ".
-                "Detected lost notifications."
+                'Detected lost notifications.'
             );
         }
 
