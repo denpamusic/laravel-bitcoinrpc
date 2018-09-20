@@ -2,6 +2,7 @@
 
 namespace Denpa\Bitcoin\ZeroMQ;
 
+use UnexpectedValueException;
 use Denpa\ZeroMQ\Connection as ZMQConnection;
 
 class Listener
@@ -25,7 +26,7 @@ class Listener
      *
      * @var int
      */
-    protected $sequence;
+    protected $sequence = 0;
 
     /**
      * Construct ZeroMQ topic.
@@ -68,9 +69,19 @@ class Listener
     {
         list($topic, $payload, $sequence) = $message;
 
-        $this->sequence = strlen($sequence) == 4 ?
-            unpack('I', $sequence)[1] : -1;
+        $sequence = strlen(bin2hex($sequence)) == PHP_INT_SIZE ?
+            unpack('I', $sequence)[1] : 0;
 
-        return ($this->callback)(bin2hex($payload), $this->sequence);
+        if ($this->sequence > 0 && (($this->sequence + 1) != $sequence)) {
+            throw new UnexpectedValueException(
+                "Broken sequence on sequence number $sequence. ".
+                "Detected lost notifications."
+            );
+        }
+
+        return ($this->callback)(
+            bin2hex($payload),
+            $this->sequence = $sequence
+        );
     }
 }

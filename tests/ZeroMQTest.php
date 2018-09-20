@@ -59,6 +59,40 @@ class ZeroMQTest extends TestCase
      */
     public function testSubscribe()
     {
+        $blockhash = '0000000000000000001509883deaf5c2bf026625c9d95247343336359a803b6d';
+
+        $callback = function ($message, $sequence) use ($blockhash) {
+            $this->assertEquals($blockhash, $message);
+            $this->assertSame($sequence, 1);
+        };
+
+        $this->manager->expects($this->once())
+            ->method('make')
+            ->with(config('bitcoind.default.zeromq'))
+            ->willReturn($this->connection);
+
+        $this->connection
+            ->expects($this->once())
+            ->method('subscribe')
+            ->with(['hashblock'], $callback)
+            ->will($this->returnCallback(function ($event, $callback) use ($blockhash) {
+                $callback([
+                    'hashblock',
+                    pack('H*', $blockhash),
+                    pack('I', 0x01)
+                ]);
+            }));
+
+        $this->bitcoind()->on('hashblock', $callback);
+    }
+
+    /**
+     * Test exception on broken sequence.
+     *
+     * @return void
+     */
+    public function testBrokenSequence()
+    {
         $callback = function ($message, $sequence) {
             //
         };
@@ -73,8 +107,25 @@ class ZeroMQTest extends TestCase
             ->method('subscribe')
             ->with(['hashblock'], $callback)
             ->will($this->returnCallback(function ($event, $callback) {
-                $callback(['hashblock', 'test', '1']);
+                // sequence number 1
+                $callback([
+                    'hashblock',
+                    pack('H', 0x00),
+                    pack('I', 0x01)
+                ]);
+
+                // sequence number 3
+                $callback([
+                    'hashblock',
+                    pack('H', 0x00),
+                    pack('I', 0x03)
+                ]);
             }));
+
+        $this->expectException(\UnexpectedValueException::class);
+        $this->expectExceptionMessage(
+            'Broken sequence on sequence number 3. Detected lost notifications.'
+        );
 
         $this->bitcoind()->on('hashblock', $callback);
     }
