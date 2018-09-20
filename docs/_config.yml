@@ -80,7 +80,7 @@ collections:
 
 # Feed
 atom_feed:
-  path: "/releases.xml"
+  path: "https://feeds.feedburner.com/laravel-bitcoinrpc"
 feed:
   path: "releases.xml"
 

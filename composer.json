@@ -38,7 +38,10 @@
         "laravel": {
             "providers": [
                 "Denpa\\Bitcoin\\Providers\\ServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Bitcoind": "Denpa\\Bitcoin\\Facades\\Bitcoind"
+            }
         }
     }
 }

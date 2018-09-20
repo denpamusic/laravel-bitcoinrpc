@@ -16,7 +16,7 @@ It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrp
 composer require denpa/laravel-bitcoinrpc "^1.2"
 ```
 
-2. Add service provider and facade to `./config/app.php`
+2. _(skip if using Laravel 5.5 or newer)_ Add service provider and facade to `./config/app.php`
 ```php
 ...
 'providers' => [

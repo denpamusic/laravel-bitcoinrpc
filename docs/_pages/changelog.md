@@ -5,4 +5,4 @@ permalink: /changelog/
 ---
 
 List of package releases and changes.  
-Subscribe to [releases feed]({{ 'releases.xml' | relative_url }}) to stay updated on new releases.
+Subscribe to [releases feed](https://feeds.feedburner.com/laravel-bitcoinrpc) to stay updated on new releases.
