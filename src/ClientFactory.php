@@ -16,9 +16,9 @@ class ClientFactory
     /**
      * Client instances.
      *
-     * @var \Illuminate\Support\Collection
+     * @var array
      */
-    protected $clients;
+    protected $clients = [];
 
     /**
      * Constructs client factory instance.
@@ -30,7 +30,6 @@ class ClientFactory
     public function __construct(array $config)
     {
         $this->config = $config;
-        $this->clients = collect();
     }
 
     /**
@@ -92,13 +91,13 @@ class ClientFactory
      */
     public function client($name = 'default')
     {
-        if (! $this->clients->has($name)) {
+        if (! array_key_exists($name, $this->clients)) {
             $config = $this->getConfig($name);
 
-            $this->clients->put($name, $this->make($config));
+            $this->clients[$name] = $this->make($config);
         }
 
-        return $this->clients->get($name);
+        return $this->clients[$name];
     }
 
     /**
