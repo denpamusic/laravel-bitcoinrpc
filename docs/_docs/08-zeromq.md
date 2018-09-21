@@ -5,7 +5,7 @@ excerpt: "How to configure laravel-bitcoinrpc to work with ZMQ."
 toc: true
 toc_label: "Using ZeroMQ"
 ---
-ZeroMQ support is available since [version 1.2.5]({{ 'version/1.2.5' | relative_url }}) via [denpa/laravel-zeromq](https://packagist.org/packages/denpa/laravel-zeromq) package.
+ZeroMQ support is available since [version 1.2.5]({{ 'release/1.2.5' | relative_url }}) via [denpa/laravel-zeromq](https://packagist.org/packages/denpa/laravel-zeromq) package.
 ### Installing ZeroMQ support package
 You'll need to install laravel-zeromq package by running composer
 ```sh
