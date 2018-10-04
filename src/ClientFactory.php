@@ -2,7 +2,7 @@
 
 namespace Denpa\Bitcoin;
 
-use Denpa\Bitcoin\Client as BitcoinClient;
+use Denpa\Bitcoin\ClientWrapper as BitcoinClient;
 
 class ClientFactory
 {
@@ -109,11 +109,6 @@ class ClientFactory
      */
     public function make(array $config = [])
     {
-        if (class_exists('Denpa\\ZeroMQ\\Manager')) {
-            // client wrapper with zeromq support
-            return new ClientWrapper($config);
-        }
-
         return new BitcoinClient($config);
     }
 

@@ -2,7 +2,7 @@
 
 use Denpa\Bitcoin\ClientFactory;
 use GuzzleHttp\Client as GuzzleHttp;
-use Denpa\Bitcoin\Client as BitcoinClient;
+use Denpa\Bitcoin\ClientWrapper as BitcoinClient;
 use Denpa\Bitcoin\Facades\Bitcoind as BitcoindFacade;
 
 class BitcoindTest extends TestCase

@@ -2,6 +2,7 @@
 
 namespace Denpa\Bitcoin;
 
+use BadMethodCallException;
 use Illuminate\Support\Arr;
 
 class ClientWrapper extends Client
@@ -9,9 +10,9 @@ class ClientWrapper extends Client
     /**
      * ZeroMQ connection.
      *
-     * @var \Denpa\Bitcoin\ZeroMQ\Connection
+     * @var \Denpa\Bitcoin\ZeroMQ\Connection|null
      */
-    protected $connection;
+    protected $zeromq = null;
 
     /**
      * Constructs new client wrapper.
@@ -22,10 +23,13 @@ class ClientWrapper extends Client
      */
     public function __construct(array $config)
     {
-        $this->connection = new ZeroMQ\Connection(
-            Arr::pull($config, 'zeromq'),
-            app()->make('Denpa\ZeroMQ\Manager')
-        );
+        if (class_exists('Denpa\\ZeroMQ\\Manager')) {
+            $this->zeromq = new ZeroMQ\Connection(
+                Arr::pull($config, 'zeromq'),
+                app()->make('Denpa\ZeroMQ\Manager')
+            );
+        }
+
         parent::__construct($config);
     }
 
@@ -39,6 +43,24 @@ class ClientWrapper extends Client
      */
     public function on($topic, callable $callback)
     {
-        $this->connection->add(new ZeroMQ\Listener($topic, $callback));
+        if (is_null($this->zeromq)) {
+            throw new BadMethodCallException(
+                'ZeroMQ support is not available, because '.
+                '"denpa/laravel-zeromq" package is not installed. '.
+                'Please install it.'
+            );
+        }
+
+        $this->zeromq->add(new ZeroMQ\Listener($topic, $callback));
+    }
+
+    /**
+     * Gets response handler class name.
+     *
+     * @return string
+     */
+    protected function getResponseHandler()
+    {
+        return 'Denpa\\Bitcoin\\Responses\\LaravelResponse';
     }
 }

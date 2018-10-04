@@ -1,7 +1,5 @@
 <?php
 
-use Denpa\Bitcoin\ClientWrapper;
-
 class ZeroMQTest extends TestCase
 {
     /**
@@ -31,24 +29,6 @@ class ZeroMQTest extends TestCase
             function ($service) {
                 return $this->manager;
             }
-        );
-    }
-
-    /**
-     * Test client wrapper.
-     *
-     * @return void
-     */
-    public function testWrapper()
-    {
-        $this->manager->expects($this->once())
-            ->method('make')
-            ->with(config('bitcoind.default.zeromq'))
-            ->willReturn($this->connection);
-
-        $this->assertInstanceOf(
-            ClientWrapper::class,
-            $this->bitcoind()->client()
         );
     }
 

@@ -42,7 +42,7 @@ class ServiceProvider extends IlluminateServiceProvider
     {
         $aliases = [
             'bitcoind'         => 'Denpa\Bitcoin\ClientFactory',
-            'bitcoind.client'  => 'Denpa\Bitcoin\Client',
+            'bitcoind.client'  => 'Denpa\Bitcoin\ClientWrapper',
         ];
 
         foreach ($aliases as $key => $aliases) {
