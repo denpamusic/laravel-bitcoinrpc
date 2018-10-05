@@ -105,6 +105,7 @@ kramdown:
 
 # Plugins (previously gems:)
 plugins:
+  - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -112,6 +113,7 @@ plugins:
 
 # mimic GitHub Pages with --safe
 whitelist:
+  - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed

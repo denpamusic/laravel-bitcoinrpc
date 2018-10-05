@@ -5,11 +5,11 @@ excerpt: "List of methods provided by response object."
 toc: true
 toc_label: "Methods"
 ---
-BitcoindResponse class provides following methods.
-They are similar to Laravel Collections and can be used
-for simple data filtering and manipulation.
+Following methods are provided by response object.  
+They are similar to laravel collections and can be used
+for simple data filtering and manipulation.  
 You can even get response data as laravel collection using
-[`collect()`]({ 'docs/response/methods#collect' | 'relative_url' })
+[`collect()`](#collect)
 method.
 
 ### `get()`
@@ -122,7 +122,7 @@ echo $response->sum('transactions.*.amount');
 ```
 
 ### `collect()`
-Gets data as laravel collection.
+Gets response data as laravel collection.  
 Check [Laravel Documentation](https://laravel.com/docs/5.7/collections#available-methods) for a complete list of available methods.
 ```php
 // $block = bitcoind()->getBlock($blockhash);
@@ -132,4 +132,4 @@ $block->collect('tx')->each(function ($txid) {
 });
 ```
 
-You can learn more about these methods by looking at the [source code](https://github.com/denpamusic/php-bitcoinrpc/blob/master/src/ResponseArrayTrait.php).
+You can learn more about these methods by looking at the [source code](https://github.com/denpamusic/php-bitcoinrpc/blob/master/src/Traits/Collection.php).
