@@ -7,12 +7,12 @@ use Illuminate\Support\Collection;
 class LaravelResponse extends BitcoindResponse
 {
     /**
-     * Get result as Laravel Collection.
+     * Gets result as Laravel Collection.
      *
      * @return \Illuminate\Support\Collection
      */
-    public function collection()
+    public function collect($key = null)
     {
-        return new Collection($this->result());
+        return new Collection($this->get($key));
     }
 }

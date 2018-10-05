@@ -104,7 +104,7 @@ The following example illustrates the use of automatic injection by type-hinting
 
 namespace App\Http\Controllers;
 
-use Denpa\Bitcoin\Client as BitcoinClient;
+use Denpa\Bitcoin\ClientWrapper as BitcoinClient;
 
 class BitcoinController extends Controller
 {
