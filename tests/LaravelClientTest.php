@@ -1,6 +1,7 @@
 <?php
 
 use Denpa\Bitcoin\LaravelClient;
+use Denpa\Bitcoin\Responses\LaravelResponse;
 
 class LaravelClientTest extends TestCase
 {
@@ -14,7 +15,7 @@ class LaravelClientTest extends TestCase
         $fake = new FakeClient([]);
 
         $this->assertEquals(
-            'Denpa\\Bitcoin\\Responses\\LaravelResponse',
+            LaravelResponse::class,
             $fake->getResponseHandler()
         );
     }
