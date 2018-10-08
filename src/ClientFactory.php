@@ -2,7 +2,7 @@
 
 namespace Denpa\Bitcoin;
 
-use Denpa\Bitcoin\ClientWrapper as BitcoinClient;
+use Denpa\Bitcoin\LaravelClient as BitcoinClient;
 
 class ClientFactory
 {

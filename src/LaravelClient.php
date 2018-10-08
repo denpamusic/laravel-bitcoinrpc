@@ -5,7 +5,7 @@ namespace Denpa\Bitcoin;
 use BadMethodCallException;
 use Illuminate\Support\Arr;
 
-class ClientWrapper extends Client
+class LaravelClient extends Client
 {
     /**
      * ZeroMQ connection.
