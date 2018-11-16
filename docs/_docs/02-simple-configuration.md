@@ -22,13 +22,14 @@ Alternatively, you can directly define your configuration in `config/bitcoind.ph
 return [
     ...
         'default' => [
-            'scheme'   => 'http',
-            'host'     => 'localhost',
-            'port'     => 8332,
-            'user'     => '(rpcuser from bitcoin.conf)',     // required
-            'password' => '(rpcpassword from bitcoin.conf)', // required
-            'ca'       => null,
-            'zeromq'   => null,
+            'scheme'        => 'http',
+            'host'          => 'localhost',
+            'port'          => 8332,
+            'user'          => '(rpcuser from bitcoin.conf)',     // required
+            'password'      => '(rpcpassword from bitcoin.conf)', // required
+            'ca'            => null,
+            'preserve_case' => false,
+            'zeromq'        => null,
         ],
     ...
 ];

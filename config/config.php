@@ -87,6 +87,21 @@ return [
 
         /*
         |--------------------------------------------------------------------------
+        | Preserve method name case.
+        |--------------------------------------------------------------------------
+        | Keeps method name case as defined in code when making a request,
+        | instead of lowercasing them.
+        | When this option is set to true, bitcoind()->getBlock()
+        | request will be sent to server as 'getBlock', when set to false
+        | method name will be lowercased to 'getblock'.
+        | For Bitcoin Core leave as default(false), for ethereum
+        | JSON-RPC API this must be set to true.
+        |
+        */
+        'preserve_case' => false,
+
+        /*
+        |--------------------------------------------------------------------------
         | Bitcoind ZeroMQ options
         |--------------------------------------------------------------------------
         | Used to subscribe to zeromq topics pushed by daemon.
@@ -106,12 +121,13 @@ return [
     ],
 
     'litecoin' => [
-        'scheme'   => 'http',
-        'host'     => 'localhost',
-        'port'     => 9332,
-        'user'     => '',
-        'password' => '',
-        'ca'       => null,
-        'zeromq'   => null,
+        'scheme'        => 'http',
+        'host'          => 'localhost',
+        'port'          => 9332,
+        'user'          => '',
+        'password'      => '',
+        'ca'            => null,
+        'preserve_case' => false,
+        'zeromq'        => null,
     ],
 ];
