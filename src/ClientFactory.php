@@ -72,11 +72,6 @@ class ClientFactory
             return $this->withDefaults($this->config);
         }
 
-        if ($name == 'default') {
-            reset($this->config);
-            $name = key($this->config);
-        }
-
         if (! array_key_exists($name, $this->config)) {
             throw new \Exception("Could not find client configuration [$name]");
         }
