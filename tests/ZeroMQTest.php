@@ -141,7 +141,7 @@ class FakeManager
 
 class FakeConnection
 {
-    public function subscribe(string $topic, callable $callback)
+    public function subscribe($topic, callable $callback)
     {
         //
     }

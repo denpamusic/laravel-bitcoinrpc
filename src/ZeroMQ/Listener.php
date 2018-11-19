@@ -63,11 +63,11 @@ class Listener
     /**
      * Success callback.
      *
-     * @param  string  $message
+     * @param  array  $message
      *
      * @return mixed
      */
-    protected function onSuccess(string $message)
+    protected function onSuccess(array $message)
     {
         list($topic, $payload, $sequence) = $message;
 
