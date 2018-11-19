@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Denpa\Bitcoin;
 
+use InvalidArgumentException;
 use Denpa\Bitcoin\LaravelClient as BitcoinClient;
 
 class ClientFactory
@@ -73,7 +74,9 @@ class ClientFactory
         }
 
         if (! array_key_exists($name, $this->config)) {
-            throw new \Exception("Could not find client configuration [$name]");
+            throw new InvalidArgumentException(
+                "Could not find client configuration [$name]"
+            );
         }
 
         return $this->withDefaults($this->config[$name]);
