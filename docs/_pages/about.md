@@ -16,8 +16,9 @@ It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrp
 It covers many usage cases describing their pros and cons and providing examples.
 
 ## Requirements
-* PHP 7.0 or higher
+* PHP 7.1 or higher
 * Laravel 5.1 or higher
+_For PHP 5.6 and 7.0 use [php-bitcoinrpc v2.0.x](https://github.com/denpamusic/php-bitcoinrpc/tree/2.1.x)._
 
 ## License
 This product is distributed under the [MIT license]({{ 'license' | relative_url }}).

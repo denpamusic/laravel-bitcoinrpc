@@ -48,8 +48,9 @@ Check [Usage](https://laravel-bitcoinrpc.denpa.pro/docs/request/standard/) for m
 Documentation is available [here](https://laravel-bitcoinrpc.denpa.pro/).
 
 ## Requirements
-* PHP 7.0 or higher
+* PHP 7.1 or higher
 * Laravel 5.1 or higher
+_For PHP 5.6 and 7.0 use [laravel-bitcoinrpc v1.2.8](https://github.com/denpamusic/laravel-bitcoinrpc/releases/tag/v1.2.8)._
 
 ## License
 This product is distributed under the [MIT license](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/LICENSE).
