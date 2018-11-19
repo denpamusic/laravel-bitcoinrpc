@@ -1,6 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Denpa\Bitcoin\Traits;
+
+use Denpa\Bitcoin\ClientFactory;
 
 trait Bitcoind
 {
@@ -9,7 +13,7 @@ trait Bitcoind
      *
      * @return \Denpa\Bitcoin\ClientFactory
      */
-    public function bitcoind()
+    public function bitcoind() : ClientFactory
     {
         return app('bitcoind');
     }

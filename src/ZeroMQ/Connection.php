@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Denpa\Bitcoin\ZeroMQ;
 
 use Denpa\ZeroMQ\Manager;
@@ -28,7 +30,7 @@ class Connection
      *
      * @return void
      */
-    public function __construct($config, Manager $manager)
+    public function __construct(?array $config, Manager $manager)
     {
         if (! is_null($config)) {
             $this->zeromq = $manager->make($this->withDefaults($config));
@@ -43,7 +45,7 @@ class Connection
      *
      * @return void
      */
-    public function add(Listener $listener)
+    public function add(Listener $listener) : void
     {
         if ($this->open) {
             $listener->listenOn($this->zeromq);
@@ -57,7 +59,7 @@ class Connection
      *
      * @return array
      */
-    protected function withDefaults(array $config = [])
+    protected function withDefaults(array $config = []) : array
     {
         return array_merge([
             'protocol' => 'tcp',

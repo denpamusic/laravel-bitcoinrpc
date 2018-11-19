@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Denpa\Bitcoin;
 
 use BadMethodCallException;
@@ -41,7 +43,7 @@ class LaravelClient extends Client
      *
      * @return void
      */
-    public function on($topic, callable $callback)
+    public function on(string $topic, callable $callback) : void
     {
         if (is_null($this->zeromq)) {
             throw new BadMethodCallException(
@@ -59,7 +61,7 @@ class LaravelClient extends Client
      *
      * @return string
      */
-    protected function getResponseHandler()
+    protected function getResponseHandler() : string
     {
         return 'Denpa\\Bitcoin\\Responses\\LaravelResponse';
     }

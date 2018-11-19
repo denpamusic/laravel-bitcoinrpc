@@ -133,7 +133,7 @@ class ZeroMQTest extends TestCase
 
 class FakeManager
 {
-    public function make($config)
+    public function make(array $config)
     {
         //
     }
@@ -141,7 +141,7 @@ class FakeManager
 
 class FakeConnection
 {
-    public function subscribe($topic, callable $callback)
+    public function subscribe(string $topic, callable $callback)
     {
         //
     }

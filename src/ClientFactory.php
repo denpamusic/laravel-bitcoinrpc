@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Denpa\Bitcoin;
 
 use Denpa\Bitcoin\LaravelClient as BitcoinClient;
@@ -39,7 +41,7 @@ class ClientFactory
      *
      * @return array
      */
-    protected function withDefaults(array $config = [])
+    protected function withDefaults(array $config = []) : array
     {
         return array_merge([
             'scheme'   => 'http',
@@ -55,11 +57,11 @@ class ClientFactory
     /**
      * Gets client config by name.
      *
-     * @param  array  $config
+     * @param  string  $name
      *
      * @return array
      */
-    public function getConfig($name = 'default')
+    public function getConfig(string $name = 'default') : array
     {
         if (isset($this->config['host']) && ! is_array($this->config['host'])) {
             /*
@@ -89,7 +91,7 @@ class ClientFactory
      *
      * @return \Denpa\Bitcoin\Client
      */
-    public function client($name = 'default')
+    public function client(string $name = 'default') : BitcoinClient
     {
         if (! array_key_exists($name, $this->clients)) {
             $config = $this->getConfig($name);
@@ -107,7 +109,7 @@ class ClientFactory
      *
      * @return \Denpa\Bitcoin\Client
      */
-    public function make(array $config = [])
+    public function make(array $config = []) : BitcoinClient
     {
         return new BitcoinClient($config);
     }
@@ -120,7 +122,7 @@ class ClientFactory
      *
      * @return mixed
      */
-    public function __call($method, array $parameters)
+    public function __call(string $method, array $parameters)
     {
         return $this->client()->{$method}(...$parameters);
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Denpa\Bitcoin\ZeroMQ;
 
 use UnexpectedValueException;
@@ -36,7 +38,7 @@ class Listener
      *
      * @return void
      */
-    public function __construct($topic, callable $callback)
+    public function __construct(string $topic, callable $callback)
     {
         $this->topic = $topic;
         $this->callback = $callback;
@@ -47,9 +49,9 @@ class Listener
      *
      * @param  \Denpa\ZeroMQ\Connection  $connection
      *
-     * @return static
+     * @return self
      */
-    public function listenOn(ZMQConnection $connection)
+    public function listenOn(ZMQConnection $connection) : self
     {
         $connection->subscribe([$this->topic], function ($message) {
             return $this->onSuccess($message);
@@ -65,7 +67,7 @@ class Listener
      *
      * @return mixed
      */
-    protected function onSuccess($message)
+    protected function onSuccess(string $message)
     {
         list($topic, $payload, $sequence) = $message;
 

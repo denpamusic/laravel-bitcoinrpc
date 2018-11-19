@@ -43,6 +43,6 @@ class FakeClient extends LaravelClient
 {
     public function getResponseHandler()
     {
-        return parent::getResponseHandler();
+        return parent::getResponseHandler() : string;
     }
 }
