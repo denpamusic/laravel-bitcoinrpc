@@ -1,9 +1,9 @@
 <?php
 
-use Denpa\Bitcoin\Traits\Bitcoind;
-use Denpa\Bitcoin\Providers\ServiceProvider;
 use Monolog\Logger;
 use Monolog\Handler\TestHandler;
+use Denpa\Bitcoin\Traits\Bitcoind;
+use Denpa\Bitcoin\Providers\ServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
@@ -56,7 +56,7 @@ abstract class TestCase extends OrchestraTestCase
 
                     return $monolog;
                 },
-            ]
+            ],
         ]);
 
         $app['config']->set('bitcoind.default', [

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Denpa\Bitcoin;
 
-use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
+use InvalidArgumentException;
 use Denpa\Bitcoin\LaravelClient as BitcoinClient;
 
 class ClientFactory
@@ -18,7 +18,7 @@ class ClientFactory
     protected $config;
 
     /**
-     * Laravel log writer
+     * Laravel log writer.
      *
      * @var \Illuminate\Log\Writer
      */
