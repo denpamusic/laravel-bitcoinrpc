@@ -8,14 +8,14 @@ use Denpa\Bitcoin\Facades\Bitcoind as BitcoindFacade;
 class BitcoindTest extends TestCase
 {
     /**
-     * Checks if client config was correctly set.
+     * Assert that configs are equal.
      *
      * @param  \Denpa\Bitcoin\Client  $client
      * @param  array  $config
      *
      * @return void
      */
-    protected function assertClientConfig(BitcoinClient $client, array $config)
+    protected function assertConfigEquals(BitcoinClient $client, array $config)
     {
         $this->assertEquals($config['scheme'], $client->getConfig('scheme'));
         $this->assertEquals($config['host'], $client->getConfig('host'));
@@ -117,7 +117,7 @@ class BitcoindTest extends TestCase
      */
     public function testConfig($name)
     {
-        $this->assertClientConfig(
+        $this->assertConfigEquals(
             bitcoind()->client($name),
             config("bitcoind.$name")
         );
@@ -165,7 +165,8 @@ class BitcoindTest extends TestCase
             'ca'       => null,
         ]);
 
-        $this->assertClientConfig(bitcoind()->client(), config('bitcoind'));
+        $this->assertConfigEquals(bitcoind()->client(), config('bitcoind'));
+        $this->assertLogContains('You are using legacy config format');
     }
 
     /**
@@ -193,6 +194,6 @@ class BitcoindTest extends TestCase
             'password' => 'testpass3',
         ];
 
-        $this->assertClientConfig(bitcoind()->make($config), $config);
+        $this->assertConfigEquals(bitcoind()->make($config), $config);
     }
 }
