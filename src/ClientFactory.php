@@ -83,11 +83,6 @@ class ClientFactory
                 '--provider="Denpa\Bitcoin\Providers\ServiceProvider" --force].'
             );
 
-            /*
-             * Legacy config format with single configuration.
-             * Please update it manually or via 'php artisan vendor:publish'
-             * See: https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/config/config.php
-             */
             return $this->withDefaults($this->config);
         }
 
