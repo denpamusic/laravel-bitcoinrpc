@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Denpa\Bitcoin;
 
 use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 use Denpa\Bitcoin\LaravelClient as BitcoinClient;
 
 class ClientFactory
@@ -17,6 +18,13 @@ class ClientFactory
     protected $config;
 
     /**
+     * Laravel log writer
+     *
+     * @var \Illuminate\Log\Writer
+     */
+    protected $logger;
+
+    /**
      * Client instances.
      *
      * @var array
@@ -26,13 +34,15 @@ class ClientFactory
     /**
      * Constructs client factory instance.
      *
-     * @param  array  $config
+     * @param  array                     $config
+     * @param  \Psr\Log\LoggerInterface  $logger
      *
      * @return void
      */
-    public function __construct(array $config)
+    public function __construct(array $config, LoggerInterface $logger)
     {
         $this->config = $config;
+        $this->logger = $logger;
     }
 
     /**
@@ -65,6 +75,14 @@ class ClientFactory
     public function getConfig(string $name = 'default') : array
     {
         if (isset($this->config['host']) && ! is_array($this->config['host'])) {
+            $this->logger->warning(
+                'laravel-bitcoind: You are using legacy config format which '.
+                'was deprecated and will be removed in the next version. '.
+                'Please update your config file by running [php artisan '.
+                'vendor:publish '.
+                '--provider="Denpa\Bitcoin\Providers\ServiceProvider" --force].'
+            );
+
             /*
              * Legacy config format with single configuration.
              * Please update it manually or via 'php artisan vendor:publish'

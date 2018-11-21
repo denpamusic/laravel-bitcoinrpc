@@ -62,7 +62,7 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function registerFactory() : void
     {
         $this->app->singleton('bitcoind', function ($app) {
-            return new ClientFactory(config('bitcoind'));
+            return new ClientFactory(config('bitcoind'), $app['log']);
         });
     }
 
