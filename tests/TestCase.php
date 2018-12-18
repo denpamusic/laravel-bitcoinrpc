@@ -96,9 +96,9 @@ abstract class TestCase extends OrchestraTestCase
     {
         $found = false;
 
-        $monolog = method_exists($this->app['log'], 'getMonolog') ? 
+        $monolog = method_exists($this->app['log'], 'getMonolog') ?
             $this->app['log']->getMonolog() : $this->app['log']->getHandlers()[0];
-        
+
         $records = $monolog->getRecords();
 
         foreach ($records as $record) {
