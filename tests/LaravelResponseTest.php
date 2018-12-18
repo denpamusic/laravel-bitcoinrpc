@@ -10,7 +10,7 @@ class LaravelResponseTest extends TestCase
      *
      * @return void
      */
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
 
