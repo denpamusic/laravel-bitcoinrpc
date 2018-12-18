@@ -10,7 +10,7 @@ php:
   - nightly
 
 env:
-  - ILLUMINATE_VERSION=5.1.* PHPUNIT_REQUIRED=1
+  - ILLUMINATE_VERSION=5.1.* PHPUNIT_VERSION=~4.0
   
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -18,7 +18,7 @@ before_script:
   - ./cc-test-reporter before-build
   - composer self-update
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
-  - if [[ $PHPUNIT_REQUIRED == "1" ]]; then composer require "phpunit/phpunit"; fi
+  - if [[ ! -z "$PHPUNIT_VERSION" ]]; then composer require "phpunit/phpunit:${PHPUNIT_VERSION}" --no-update; fi
   - composer install --prefer-source --no-interaction
 
 script:
@@ -29,45 +29,45 @@ script:
 matrix:
   include:
     - php: 7.1
-      env: ILLUMINATE_VERSION=5.2.*
+      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
     - php: 7.1
-      env: ILLUMINATE_VERSION=5.3.*
+      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: 7.1
-      env: ILLUMINATE_VERSION=5.4.*
+      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
     - php: 7.1
-      env: ILLUMINATE_VERSION=5.5.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.5.*
     - php: 7.1
-      env: ILLUMINATE_VERSION=5.6.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.6.*
     - php: 7.2
-      env: ILLUMINATE_VERSION=5.2.*
+      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
     - php: 7.2
-      env: ILLUMINATE_VERSION=5.3.*
+      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: 7.2
-      env: ILLUMINATE_VERSION=5.4.*
+      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
     - php: 7.2
-      env: ILLUMINATE_VERSION=5.5.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.5.*
     - php: 7.2
-      env: ILLUMINATE_VERSION=5.6.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.6.*
     - php: 7.3
-      env: ILLUMINATE_VERSION=5.2.*
+      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
     - php: 7.3
-      env: ILLUMINATE_VERSION=5.3.*
+      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: 7.3
-      env: ILLUMINATE_VERSION=5.4.*
+      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
     - php: 7.3
-      env: ILLUMINATE_VERSION=5.5.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.5.*
     - php: 7.3
-      env: ILLUMINATE_VERSION=5.6.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.6.*
     - php: nightly
-      env: ILLUMINATE_VERSION=5.2.*
+      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
     - php: nightly
-      env: ILLUMINATE_VERSION=5.3.*
+      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: nightly
-      env: ILLUMINATE_VERSION=5.4.*
+      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
     - php: nightly
-      env: ILLUMINATE_VERSION=5.5.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.5.*
     - php: nightly
-      env: ILLUMINATE_VERSION=5.6.* PHPUNIT_REQUIRED=0
+      env: ILLUMINATE_VERSION=5.6.*
   allow_failures:
     - php: 7.3
     - php: hhvm
