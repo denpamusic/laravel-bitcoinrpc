@@ -17,7 +17,7 @@ It covers many usage cases describing their pros and cons and providing examples
 
 ## Requirements
 * PHP 7.1 or higher
-* Laravel 5.1 or higher
+* Laravel 5.2 or higher
 
 _For PHP 5.6 and 7.0 use [laravel-bitcoinrpc v1.2.8]({{ 'release/1.2.8' | relative_url }})._
 
