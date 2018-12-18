@@ -10,7 +10,7 @@ php:
   - nightly
 
 env:
-  - ILLUMINATE_VERSION=5.1.* PHPUNIT_VERSION=~4.0
+  - ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
   
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -29,8 +29,6 @@ script:
 matrix:
   include:
     - php: 7.1
-      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
-    - php: 7.1
       env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: 7.1
       env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
@@ -38,8 +36,6 @@ matrix:
       env: ILLUMINATE_VERSION=5.5.*
     - php: 7.1
       env: ILLUMINATE_VERSION=5.6.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
     - php: 7.2
       env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: 7.2
@@ -49,8 +45,6 @@ matrix:
     - php: 7.2
       env: ILLUMINATE_VERSION=5.6.*
     - php: 7.3
-      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
-    - php: 7.3
       env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: 7.3
       env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
@@ -58,8 +52,6 @@ matrix:
       env: ILLUMINATE_VERSION=5.5.*
     - php: 7.3
       env: ILLUMINATE_VERSION=5.6.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
     - php: nightly
       env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: nightly
