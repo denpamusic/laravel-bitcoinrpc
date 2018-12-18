@@ -47,6 +47,10 @@ abstract class TestCase extends OrchestraTestCase
      */
     protected function getEnvironmentSetUp($app)
     {
+        if (method_exists($app['log'], 'getMonolog')) {
+            $app['log']->getMonolog()->setHandlers([new TestHandler()]);
+        }
+
         $app['config']->set('logging.channels', [
             'testing' => [
                 'driver' => 'custom',
@@ -97,9 +101,11 @@ abstract class TestCase extends OrchestraTestCase
         $found = false;
 
         $monolog = method_exists($this->app['log'], 'getMonolog') ?
-            $this->app['log']->getMonolog() : $this->app['log']->getHandlers()[0];
+            $this->app['log']->getMonolog() : $this->app['log'];
 
-        $records = $monolog->getRecords();
+        $records = $monolog
+            ->getHandlers()[0]
+            ->getRecords();
 
         foreach ($records as $record) {
             if (strpos($record['message'], $message) !== false) {
