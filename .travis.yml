@@ -36,6 +36,8 @@ matrix:
       env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: 7.3
       env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
+    - php: hhvm
+      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
     - php: nightly
       env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
 # Laravel 5.4.*
@@ -45,6 +47,8 @@ matrix:
       env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
     - php: 7.3
       env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
+    - php: hhvm
+      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
     - php: nightly
       env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
 # Laravel 5.5.*
@@ -53,6 +57,8 @@ matrix:
     - php: 7.2
       env: ILLUMINATE_VERSION=5.5.*
     - php: 7.3
+      env: ILLUMINATE_VERSION=5.5.*
+    - php: hhvm
       env: ILLUMINATE_VERSION=5.5.*
     - php: nightly
       env: ILLUMINATE_VERSION=5.5.*
