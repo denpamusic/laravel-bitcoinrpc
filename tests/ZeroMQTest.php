@@ -54,7 +54,7 @@ class ZeroMQTest extends TestCase
         $this->connection
             ->expects($this->once())
             ->method('subscribe')
-            ->with(['hashblock'], $callback)
+            ->with(['hashblock'])
             ->will($this->returnCallback(function ($event, $callback) use ($blockhash) {
                 $callback([
                     'hashblock',
@@ -85,7 +85,7 @@ class ZeroMQTest extends TestCase
         $this->connection
             ->expects($this->once())
             ->method('subscribe')
-            ->with(['hashblock'], $callback)
+            ->with(['hashblock'])
             ->will($this->returnCallback(function ($event, $callback) {
                 // sequence number 1
                 $callback([
