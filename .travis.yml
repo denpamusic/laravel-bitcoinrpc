@@ -81,7 +81,6 @@ matrix:
     - php: nightly
       env: ILLUMINATE_VERSION=5.7.*
   allow_failures:
-    - php: 7.3
     - php: hhvm
     - php: nightly
   fast_finish: true
