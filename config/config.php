@@ -110,7 +110,7 @@ return [
         | zmqpubhashblock, zmqpubrawblock and zmqpubrawtx options defined
         | in bitcoind.conf.
         | For more information
-        | visit https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md.
+        | visit https://laravel-bitcoinrpc.denpa.pro/docs/zeromq/
         |
         */
 
