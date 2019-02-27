@@ -12,7 +12,7 @@ php:
 env:
 # Laravel 5.2.*
   - ILLUMINATE_VERSION=5.2.* PHPUNIT_VERSION=~5.0
-  
+
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
@@ -80,6 +80,15 @@ matrix:
       env: ILLUMINATE_VERSION=5.7.*
     - php: nightly
       env: ILLUMINATE_VERSION=5.7.*
+# Laravel 5.8.*
+    - php: 7.1
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=5.8.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=5.8.*
   allow_failures:
     - php: hhvm
     - php: nightly
