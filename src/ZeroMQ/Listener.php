@@ -69,7 +69,7 @@ class Listener
      */
     protected function onSuccess(array $message)
     {
-        list($topic, $payload, $sequence) = $message;
+        [$topic, $payload, $sequence] = $message;
 
         $sequence = strlen(bin2hex($sequence)) == PHP_INT_SIZE ?
             unpack('I', $sequence)[1] : 0;
