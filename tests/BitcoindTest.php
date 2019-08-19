@@ -17,13 +17,13 @@ class BitcoindTest extends TestCase
      */
     protected function assertConfigEquals(BitcoinClient $client, array $config)
     {
-        $this->assertEquals($config['scheme'], $client->getConfig('scheme'));
-        $this->assertEquals($config['host'], $client->getConfig('host'));
-        $this->assertEquals($config['port'], $client->getConfig('port'));
-        $this->assertNotNull($client->getConfig('user'));
-        $this->assertNotNull($client->getConfig('password'));
-        $this->assertEquals($config['user'], $client->getConfig('user'));
-        $this->assertEquals($config['password'], $client->getConfig('password'));
+        $this->assertEquals($config['scheme'], $client->getConfig()['scheme']);
+        $this->assertEquals($config['host'], $client->getConfig()['host']);
+        $this->assertEquals($config['port'], $client->getConfig()['port']);
+        $this->assertNotNull($client->getConfig()['user']);
+        $this->assertNotNull($client->getConfig()['password']);
+        $this->assertEquals($config['user'], $client->getConfig()['user']);
+        $this->assertEquals($config['password'], $client->getConfig()['password']);
     }
 
     /**
