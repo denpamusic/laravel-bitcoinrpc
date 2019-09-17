@@ -89,6 +89,13 @@ matrix:
       env: ILLUMINATE_VERSION=5.8.*
     - php: nightly
       env: ILLUMINATE_VERSION=5.8.*
+# Laravel 6.0.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=6.0.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=6.0.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=6.0.*
   allow_failures:
     - php: hhvm
     - php: nightly
