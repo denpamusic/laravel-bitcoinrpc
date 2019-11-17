@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Denpa\Bitcoin;
 
-use Psr\Log\LoggerInterface;
-use InvalidArgumentException;
 use Denpa\Bitcoin\LaravelClient as BitcoinClient;
+use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
 
 class ClientFactory
 {
