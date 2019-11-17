@@ -1,9 +1,9 @@
 <?php
 
 use Denpa\Bitcoin\ClientFactory;
-use GuzzleHttp\Client as GuzzleHttp;
-use Denpa\Bitcoin\LaravelClient as BitcoinClient;
 use Denpa\Bitcoin\Facades\Bitcoind as BitcoindFacade;
+use Denpa\Bitcoin\LaravelClient as BitcoinClient;
+use GuzzleHttp\Client as GuzzleHttp;
 
 class BitcoindTest extends TestCase
 {
