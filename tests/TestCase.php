@@ -1,9 +1,9 @@
 <?php
 
-use Monolog\Logger;
-use Monolog\Handler\TestHandler;
-use Denpa\Bitcoin\Traits\Bitcoind;
 use Denpa\Bitcoin\Providers\ServiceProvider;
+use Denpa\Bitcoin\Traits\Bitcoind;
+use Monolog\Handler\TestHandler;
+use Monolog\Logger;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 abstract class TestCase extends OrchestraTestCase
