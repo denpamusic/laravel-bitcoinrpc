@@ -70,6 +70,7 @@ abstract class TestCase extends OrchestraTestCase
             'user'     => 'testuser',
             'password' => 'testpass',
             'ca'       => null,
+            'timeout'  => false,
             'zeromq'   => [
                 'protocol' => 'tcp',
                 'host'     => 'localhost',
@@ -85,6 +86,7 @@ abstract class TestCase extends OrchestraTestCase
             'password' => 'testpass2',
             'ca'       => null,
             'zeromq'   => null,
+            'timeout'  => 5,
         ]);
     }
 

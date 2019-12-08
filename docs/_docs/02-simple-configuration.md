@@ -29,6 +29,7 @@ return [
             'password'      => '(rpcpassword from bitcoin.conf)', // required
             'ca'            => null,
             'preserve_case' => false,
+            'timeout'       => false,
             'zeromq'        => null,
         ],
     ...

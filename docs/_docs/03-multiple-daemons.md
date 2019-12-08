@@ -21,6 +21,7 @@ return [
             'user'     => '(rpcuser from bitcoin.conf)',     // required
             'password' => '(rpcpassword from bitcoin.conf)', // required
             'ca'       => null,
+            'timeout'  => false,
             'zeromq'   => null,
         ],
 
@@ -32,6 +33,7 @@ return [
             'user'     => '(rpcuser from litecoin.conf)',     // required
             'password' => '(rpcpassword from litecoin.conf)', // required
             'ca'       => null,
+            'timeout'  => false,
             'zeromq'   => null,
         ],
     ...

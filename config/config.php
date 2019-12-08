@@ -87,7 +87,7 @@ return [
 
         /*
         |--------------------------------------------------------------------------
-        | Preserve method name case.
+        | Preserve method name case
         |--------------------------------------------------------------------------
         | Keeps method name case as defined in code when making a request,
         | instead of lowercasing them.
@@ -114,6 +114,17 @@ return [
         |
         */
 
+        /*
+        |--------------------------------------------------------------------------
+        | Bitcoind timeout
+        |--------------------------------------------------------------------------
+        |
+        | Times-out connection or request after this amount of seconds.
+        | Set to false or 0 to wait indefinitely.
+        |
+        */
+        'timeout' => false,
+
         'zeromq' => [
             'host' => 'localhost',
             'port' => 28332,
@@ -128,6 +139,7 @@ return [
         'password'      => '',
         'ca'            => null,
         'preserve_case' => false,
+        'timeout'       => false,
         'zeromq'        => null,
     ],
 ];

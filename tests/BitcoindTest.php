@@ -24,6 +24,7 @@ class BitcoindTest extends TestCase
         $this->assertNotNull($client->getConfig()['password']);
         $this->assertEquals($config['user'], $client->getConfig()['user']);
         $this->assertEquals($config['password'], $client->getConfig()['password']);
+        $this->assertEquals($config['timeout'], $client->getConfig()['timeout']);
     }
 
     /**
@@ -163,6 +164,7 @@ class BitcoindTest extends TestCase
             'user'     => 'testuser3',
             'password' => 'testpass3',
             'ca'       => null,
+            'timeout'  => false,
         ]);
 
         $this->assertConfigEquals(bitcoind()->client(), config('bitcoind'));
@@ -192,6 +194,7 @@ class BitcoindTest extends TestCase
             'port'     => 18332,
             'user'     => 'testuser3',
             'password' => 'testpass3',
+            'timeout'  => false,
         ];
 
         $this->assertConfigEquals(bitcoind()->make($config), $config);
