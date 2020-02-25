@@ -52,7 +52,7 @@ class ClientFactory
      *
      * @return array
      */
-    protected function withDefaults(array $config = []) : array
+    protected function withDefaults(array $config = []): array
     {
         return array_merge([
             'scheme'   => 'http',
@@ -72,7 +72,7 @@ class ClientFactory
      *
      * @return array
      */
-    public function getConfig(string $name = 'default') : array
+    public function getConfig(string $name = 'default'): array
     {
         if (isset($this->config['host']) && ! is_array($this->config['host'])) {
             $this->logger->warning(
@@ -102,7 +102,7 @@ class ClientFactory
      *
      * @return \Denpa\Bitcoin\Client
      */
-    public function client(string $name = 'default') : BitcoinClient
+    public function client(string $name = 'default'): BitcoinClient
     {
         if (! array_key_exists($name, $this->clients)) {
             $config = $this->getConfig($name);
@@ -120,7 +120,7 @@ class ClientFactory
      *
      * @return \Denpa\Bitcoin\Client
      */
-    public function make(array $config = []) : BitcoinClient
+    public function make(array $config = []): BitcoinClient
     {
         return new BitcoinClient($config);
     }

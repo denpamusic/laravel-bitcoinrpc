@@ -41,7 +41,7 @@ class LaravelClientTest extends TestCase
 
 class FakeClient extends LaravelClient
 {
-    public function getResponseHandler() : string
+    public function getResponseHandler(): string
     {
         return parent::getResponseHandler();
     }

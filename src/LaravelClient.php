@@ -43,7 +43,7 @@ class LaravelClient extends Client
      *
      * @return void
      */
-    public function on(string $topic, callable $callback) : void
+    public function on(string $topic, callable $callback): void
     {
         if (is_null($this->zeromq)) {
             throw new BadMethodCallException(
@@ -61,7 +61,7 @@ class LaravelClient extends Client
      *
      * @return string
      */
-    protected function getResponseHandler() : string
+    protected function getResponseHandler(): string
     {
         return 'Denpa\\Bitcoin\\Responses\\LaravelResponse';
     }
