@@ -13,7 +13,7 @@ trait Bitcoind
      *
      * @return \Denpa\Bitcoin\ClientFactory
      */
-    public function bitcoind() : ClientFactory
+    public function bitcoind(): ClientFactory
     {
         return app('bitcoind');
     }
