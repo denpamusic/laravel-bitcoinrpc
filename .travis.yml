@@ -3,9 +3,9 @@ language: php
 dist: trusty
 
 php:
-  - 7.1
   - 7.2
   - 7.3
+  - 7.4
   - hhvm
   - nightly
 
@@ -29,57 +29,6 @@ script:
 
 matrix:
   include:
-# Laravel 5.3.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
-    - php: hhvm
-      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.3.* PHPUNIT_VERSION=~5.0
-# Laravel 5.4.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
-    - php: hhvm
-      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.4.* PHPUNIT_VERSION=~5.7
-# Laravel 5.5.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.5.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.5.*
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.5.*
-    - php: hhvm
-      env: ILLUMINATE_VERSION=5.5.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.5.*
-# Laravel 5.6.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.6.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.6.*
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.6.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.6.*
-# Laravel 5.7.*
-    - php: 7.1
-      env: ILLUMINATE_VERSION=5.7.*
-    - php: 7.2
-      env: ILLUMINATE_VERSION=5.7.*
-    - php: 7.3
-      env: ILLUMINATE_VERSION=5.7.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.7.*
 # Laravel 5.8.*
     - php: 7.1
       env: ILLUMINATE_VERSION=5.8.*
@@ -87,15 +36,23 @@ matrix:
       env: ILLUMINATE_VERSION=5.8.*
     - php: 7.3
       env: ILLUMINATE_VERSION=5.8.*
-    - php: nightly
-      env: ILLUMINATE_VERSION=5.8.*
-# Laravel 6.0.*
+# Laravel 6.*
     - php: 7.2
-      env: ILLUMINATE_VERSION=6.0.*
+      env: ILLUMINATE_VERSION=6.*
     - php: 7.3
-      env: ILLUMINATE_VERSION=6.0.*
+      env: ILLUMINATE_VERSION=6.*
     - php: nightly
-      env: ILLUMINATE_VERSION=6.0.*
+      env: ILLUMINATE_VERSION=6.*
+# Laravel 7.*
+    - php: 7.2
+      env: ILLUMINATE_VERSION=7.*
+    - php: 7.3
+      env: ILLUMINATE_VERSION=7.*
+    - php: 7.4
+      env: ILLUMINATE_VERSION=7.*
+    - php: nightly
+      env: ILLUMINATE_VERSION=7.*
+
   allow_failures:
     - php: hhvm
     - php: nightly
