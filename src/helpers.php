@@ -10,7 +10,7 @@ if (! function_exists('bitcoind')) {
      *
      * @return \Denpa\Bitcoin\ClientFactory
      */
-    function bitcoind() : ClientFactory
+    function bitcoind(): ClientFactory
     {
         return app('bitcoind');
     }

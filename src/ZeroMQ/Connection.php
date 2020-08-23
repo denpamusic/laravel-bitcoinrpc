@@ -45,7 +45,7 @@ class Connection
      *
      * @return void
      */
-    public function add(Listener $listener) : void
+    public function add(Listener $listener): void
     {
         if ($this->open) {
             $listener->listenOn($this->zeromq);
@@ -59,7 +59,7 @@ class Connection
      *
      * @return array
      */
-    protected function withDefaults(array $config = []) : array
+    protected function withDefaults(array $config = []): array
     {
         return array_merge([
             'protocol' => 'tcp',

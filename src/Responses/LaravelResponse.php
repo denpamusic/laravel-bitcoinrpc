@@ -15,7 +15,7 @@ class LaravelResponse extends BitcoindResponse
      *
      * @return \Illuminate\Support\Collection
      */
-    public function collect(?string $key = null) : Collection
+    public function collect(?string $key = null): Collection
     {
         return new Collection($this->get($key));
     }
