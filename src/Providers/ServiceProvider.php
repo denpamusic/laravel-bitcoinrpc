@@ -14,7 +14,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    public function boot() : void
+    public function boot(): void
     {
         $path = realpath(__DIR__.'/../../config/config.php');
 
@@ -27,7 +27,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    public function register() : void
+    public function register(): void
     {
         $this->registerAliases();
 
@@ -40,7 +40,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    protected function registerAliases() : void
+    protected function registerAliases(): void
     {
         $aliases = [
             'bitcoind'         => 'Denpa\Bitcoin\ClientFactory',
@@ -59,7 +59,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    protected function registerFactory() : void
+    protected function registerFactory(): void
     {
         $this->app->singleton('bitcoind', function ($app) {
             return new ClientFactory(config('bitcoind'), $app['log']);
@@ -71,7 +71,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    protected function registerClient() : void
+    protected function registerClient(): void
     {
         $this->app->bind('bitcoind.client', function ($app) {
             return $app['bitcoind']->client();
