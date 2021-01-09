@@ -1,56 +1,35 @@
+os: linux
+dist: bionic
 language: php
-
-dist: trusty
-
 php:
-  - 7.1
-  - 7.2
-  - 7.3
-  - hhvm
+  - 7.4
   - nightly
-
 env:
-# Laravel 5.8.*
-  - ILLUMINATE_VERSION=5.8.*
-
+# Laravel 7.x
+  - ILLUMINATE_VERSION=7.x
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
   - composer self-update
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
-  - if [[ ! -z "$PHPUNIT_VERSION" ]]; then composer require "phpunit/phpunit:${PHPUNIT_VERSION}" --no-update; fi
   - composer install --prefer-source --no-interaction
-
 script:
   - mkdir -p build/logs
   - php vendor/bin/phpunit
-  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && $TRAVIS_PHP_VERSION != "hhvm" && $TRAVIS_PHP_VERSION != "nightly" && $TRAVIS_PHP_VERSION != "7.3" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
-
+  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && $TRAVIS_PHP_VERSION != "nightly" && $TRAVIS_PHP_VERSION != "8.0" ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
 matrix:
   include:
-# Laravel 6.x
-    - php: 7.2
-      env: ILLUMINATE_VERSION=6.x
-    - php: 7.3
-      env: ILLUMINATE_VERSION=6.x
-    - php: nightly
-      env: ILLUMINATE_VERSION=6.x
-# Laravel 7.x
-    - php: 7.2
-      env: ILLUMINATE_VERSION=7.x
-    - php: 7.3
-      env: ILLUMINATE_VERSION=7.x
+# Laravel 8.x
     - php: 7.4
-      env: ILLUMINATE_VERSION=7.x
+      env: ILLUMINATE_VERSION=8.x
+    - php: 8.0
+      env: ILLUMINATE_VERSION=8.x
     - php: nightly
-      env: ILLUMINATE_VERSION=7.x
-
+      env: ILLUMINATE_VERSION=8.x
   allow_failures:
-    - php: hhvm
     - php: nightly
   fast_finish: true
-
 notifications:
   webhooks:
     urls:
