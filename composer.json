@@ -17,7 +17,7 @@
         "denpa/php-bitcoinrpc": ">=2.1.2 <2.2"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0 | 4.x | 5.x"
+        "orchestra/testbench": "5.x | 6.x"
     },
     "autoload": {
         "psr-4" : {

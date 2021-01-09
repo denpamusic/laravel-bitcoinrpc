@@ -3,15 +3,14 @@ language: php
 dist: trusty
 
 php:
-  - 7.1
   - 7.2
   - 7.3
   - hhvm
   - nightly
 
 env:
-# Laravel 5.8.*
-  - ILLUMINATE_VERSION=5.8.*
+# Laravel 7.x
+  - ILLUMINATE_VERSION=7.x
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -19,7 +18,6 @@ before_script:
   - ./cc-test-reporter before-build
   - composer self-update
   - composer require "illuminate/support:${ILLUMINATE_VERSION}" --no-update
-  - if [[ ! -z "$PHPUNIT_VERSION" ]]; then composer require "phpunit/phpunit:${PHPUNIT_VERSION}" --no-update; fi
   - composer install --prefer-source --no-interaction
 
 script:
@@ -29,22 +27,13 @@ script:
 
 matrix:
   include:
-# Laravel 6.x
-    - php: 7.2
-      env: ILLUMINATE_VERSION=6.x
+# Laravel 8.x
     - php: 7.3
-      env: ILLUMINATE_VERSION=6.x
+      env: ILLUMINATE_VERSION=8.x
+    - php: 8.0
+      env: ILLUMINATE_VERSION=8.x
     - php: nightly
-      env: ILLUMINATE_VERSION=6.x
-# Laravel 7.x
-    - php: 7.2
-      env: ILLUMINATE_VERSION=7.x
-    - php: 7.3
-      env: ILLUMINATE_VERSION=7.x
-    - php: 7.4
-      env: ILLUMINATE_VERSION=7.x
-    - php: nightly
-      env: ILLUMINATE_VERSION=7.x
+      env: ILLUMINATE_VERSION=8.x
 
   allow_failures:
     - php: hhvm
