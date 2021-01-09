@@ -16,10 +16,9 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     public function boot(): void
     {
-        $path = realpath(__DIR__.'/../../config/config.php');
-
-        $this->publishes([$path => config_path('bitcoind.php')], 'config');
-        $this->mergeConfigFrom($path, 'bitcoind');
+        $this->publishes([
+            __DIR__.'/../../config/bitcoind.php' => config_path('bitcoind.php'),
+        ]);
     }
 
     /**
@@ -29,6 +28,10 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     public function register(): void
     {
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/bitcoind.php', 'bitcoind'
+        );
+
         $this->registerAliases();
 
         $this->registerFactory();
