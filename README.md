@@ -12,23 +12,10 @@ It's based on [denpa/php-bitcoinrpc](https://github.com/denpamusic/php-bitcoinrp
 ## Quick Installation
 1. Install package:
 ```sh
-composer require denpa/laravel-bitcoinrpc "^1.2"
+composer require denpa/laravel-bitcoinrpc "^1.3"
 ```
 
-2. _(skip if using Laravel 5.5 or newer)_ Add service provider and facade to `./config/app.php`
-```php
-...
-'providers' => [
-    ...
-    Denpa\Bitcoin\Providers\ServiceProvider::class,
-];
-...
-'aliases' => [
-    ...
-    'Bitcoind' => Denpa\Bitcoin\Facades\Bitcoind::class,
-];
-```
-3. Publish config file
+2. Publish config file
 ```sh
 php artisan vendor:publish --provider="Denpa\Bitcoin\Providers\ServiceProvider"
 ```
@@ -47,10 +34,11 @@ Check [Usage](https://laravel-bitcoinrpc.denpa.pro/docs/request/standard/) for m
 Documentation is available [here](https://laravel-bitcoinrpc.denpa.pro/).
 
 ## Requirements
-* PHP 7.1 or higher
-* Laravel 5.2 or higher
+* PHP 8.0 or higher
+* Laravel 9.0 or higher
 
-_For PHP 5.6 and 7.0 use [laravel-bitcoinrpc v1.2.8](https://github.com/denpamusic/laravel-bitcoinrpc/releases/tag/v1.2.8)._
+_For PHP 5.6 to 7.0 use [laravel-bitcoinrpc v1.2.8](https://github.com/denpamusic/laravel-bitcoinrpc/releases/tag/v1.2.8)._  
+_For PHP 7.0 to 7.4 use [laravel-bitcoinrpc v1.2.8](https://github.com/denpamusic/laravel-bitcoinrpc/releases/tag/v1.2.11)._  
 
 ## License
 This product is distributed under the [MIT license](https://github.com/denpamusic/laravel-bitcoinrpc/blob/master/LICENSE).
