@@ -20,7 +20,6 @@ class LaravelClient extends Client
      * Constructs new client wrapper.
      *
      * @param  array  $config
-     *
      * @return void
      */
     public function __construct(array $config)
@@ -38,9 +37,8 @@ class LaravelClient extends Client
     /**
      * Adds new listener.
      *
-     * @param  string    $topic
+     * @param  string  $topic
      * @param  callable  $callback
-     *
      * @return void
      */
     public function on(string $topic, callable $callback): void
