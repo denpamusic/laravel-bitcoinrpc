@@ -1,10 +1,9 @@
 # Bitcoin JSON-RPC Service Provider for Laravel
 [![Latest Stable Version](https://poser.pugx.org/denpa/laravel-bitcoinrpc/v/stable)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
 [![License](https://poser.pugx.org/denpa/laravel-bitcoinrpc/license)](https://packagist.org/packages/denpa/laravel-bitcoinrpc)
-[![Build Status](https://travis-ci.org/denpamusic/laravel-bitcoinrpc.svg)](https://travis-ci.org/denpamusic/laravel-bitcoinrpc)
+[![ci](https://github.com/denpamusic/laravel-bitcoinrpc/actions/workflows/ci.yml/badge.svg)](https://github.com/denpamusic/laravel-bitcoinrpc/actions/workflows/ci.yml)
 [![Code Climate](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/gpa.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc)
 [![Code Coverage](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/badges/coverage.svg)](https://codeclimate.com/github/denpamusic/laravel-bitcoinrpc/coverage)
-[![Join the chat at https://gitter.im/laravel-bitcoinrpc/Lobby](https://badges.gitter.im/laravel-bitcoinrpc/Lobby.svg)](https://gitter.im/laravel-bitcoinrpc/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## About
 This package allows you to make JSON-RPC calls to Bitcoin Core JSON-RPC server from your laravel project.
