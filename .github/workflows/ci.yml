@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['8.1']
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up PHP ${{ matrix.php-version }}
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-version }}
+        tools: composer
+      env:
+        COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install dependencies
+      run: |
+        composer self-update
+        composer install --prefer-source --no-interaction
+
+    - name: Run tests
+      run: vendor/bin/phpunit
+
+    - uses: paambaati/codeclimate-action@v3.0.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageLocations: |
+          ${{github.workspace}}/clover.xml:clover

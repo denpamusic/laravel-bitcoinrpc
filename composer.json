@@ -8,16 +8,16 @@
     "authors": [
         {
             "name": "Denis Paavilainen",
-            "email": "denpa@netfleet.space",
+            "email": "denpa@denpa.pro",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=7.1",
+        "php": ">=8.0",
         "denpa/php-bitcoinrpc": ">=2.1.2 <2.2"
     },
     "require-dev": {
-        "orchestra/testbench": "5.x | 6.x"
+        "orchestra/testbench": "7.x"
     },
     "autoload": {
         "psr-4" : {
