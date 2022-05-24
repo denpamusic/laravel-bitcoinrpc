@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=8.0",
-        "denpa/php-bitcoinrpc": ">=2.1.2 <2.2"
+        "denpa/php-bitcoinrpc": ">=2.2 <2.3"
     },
     "require-dev": {
         "orchestra/testbench": "7.x"
