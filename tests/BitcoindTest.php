@@ -12,7 +12,6 @@ class BitcoindTest extends TestCase
      *
      * @param  \Denpa\Bitcoin\Client  $client
      * @param  array  $config
-     *
      * @return void
      */
     protected function assertConfigEquals(BitcoinClient $client, array $config)

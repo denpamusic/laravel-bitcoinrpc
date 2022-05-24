@@ -14,7 +14,6 @@ abstract class TestCase extends OrchestraTestCase
      * Get package providers.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array
      */
     protected function getPackageProviders($app)
@@ -28,7 +27,6 @@ abstract class TestCase extends OrchestraTestCase
      * Get package aliases.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array
      */
     protected function getPackageAliases($app)
@@ -42,7 +40,6 @@ abstract class TestCase extends OrchestraTestCase
      * Define environment setup.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return void
      */
     protected function getEnvironmentSetUp($app)
@@ -94,8 +91,7 @@ abstract class TestCase extends OrchestraTestCase
      * Assert that log contains message.
      *
      * @param  string  $message
-     * @param  bool    $strict
-     *
+     * @param  bool  $strict
      * @return void
      */
     protected function assertLogContains($message = '', $strict = false)

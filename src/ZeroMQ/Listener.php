@@ -33,9 +33,8 @@ class Listener
     /**
      * Construct ZeroMQ topic.
      *
-     * @param  string    $topic
+     * @param  string  $topic
      * @param  callable  $callback
-     *
      * @return void
      */
     public function __construct(string $topic, callable $callback)
@@ -48,7 +47,6 @@ class Listener
      * Attach listener to connection.
      *
      * @param  \Denpa\ZeroMQ\Connection  $connection
-     *
      * @return self
      */
     public function listenOn(ZMQConnection $connection): self
@@ -64,7 +62,6 @@ class Listener
      * Success callback.
      *
      * @param  array  $message
-     *
      * @return mixed
      */
     protected function onSuccess(array $message)

@@ -34,9 +34,8 @@ class ClientFactory
     /**
      * Constructs client factory instance.
      *
-     * @param  array                     $config
+     * @param  array  $config
      * @param  \Psr\Log\LoggerInterface  $logger
-     *
      * @return void
      */
     public function __construct(array $config, LoggerInterface $logger)
@@ -49,7 +48,6 @@ class ClientFactory
      * Appends configuration array with default values.
      *
      * @param  array  $config
-     *
      * @return array
      */
     protected function withDefaults(array $config = []): array
@@ -69,7 +67,6 @@ class ClientFactory
      * Gets client config by name.
      *
      * @param  string  $name
-     *
      * @return array
      */
     public function getConfig(string $name = 'default'): array
@@ -99,7 +96,6 @@ class ClientFactory
      * Gets client instance by name or creates if not exists.
      *
      * @param  string  $name
-     *
      * @return \Denpa\Bitcoin\Client
      */
     public function client(string $name = 'default'): BitcoinClient
@@ -117,7 +113,6 @@ class ClientFactory
      * Creates client instance.
      *
      * @param  array  $config
-     *
      * @return \Denpa\Bitcoin\Client
      */
     public function make(array $config = []): BitcoinClient
@@ -129,8 +124,7 @@ class ClientFactory
      * Pass methods onto the default client.
      *
      * @param  string  $method
-     * @param  array   $parameters
-     *
+     * @param  array  $parameters
      * @return mixed
      */
     public function __call(string $method, array $parameters)

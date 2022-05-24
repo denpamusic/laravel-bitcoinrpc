@@ -27,7 +27,6 @@ class Connection
      *
      * @param  array|null  $config
      * @param  \Denpa\ZeroMQ\Manager  $manager
-     *
      * @return void
      */
     public function __construct(?array $config, Manager $manager)
@@ -42,7 +41,6 @@ class Connection
      * Adds new listener.
      *
      * @param  \Denpa\Bitcoin\ZeroMQ\Listener  $listener
-     *
      * @return void
      */
     public function add(Listener $listener): void
@@ -56,7 +54,6 @@ class Connection
      * Appends configuration array with default values.
      *
      * @param  array  $config
-     *
      * @return array
      */
     protected function withDefaults(array $config = []): array
