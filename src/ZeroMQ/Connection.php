@@ -60,8 +60,8 @@ class Connection
     {
         return array_merge([
             'protocol' => 'tcp',
-            'host'     => 'localhost',
-            'port'     => 28332,
+            'host' => 'localhost',
+            'port' => 28332,
         ], $config);
     }
 }

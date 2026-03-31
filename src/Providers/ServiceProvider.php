@@ -46,8 +46,8 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function registerAliases(): void
     {
         $aliases = [
-            'bitcoind'         => 'Denpa\Bitcoin\ClientFactory',
-            'bitcoind.client'  => 'Denpa\Bitcoin\LaravelClient',
+            'bitcoind' => 'Denpa\Bitcoin\ClientFactory',
+            'bitcoind.client' => 'Denpa\Bitcoin\LaravelClient',
         ];
 
         foreach ($aliases as $key => $aliases) {
