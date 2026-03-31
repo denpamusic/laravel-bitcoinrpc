@@ -61,29 +61,29 @@ abstract class TestCase extends OrchestraTestCase
         ]);
 
         $app['config']->set('bitcoind.default', [
-            'scheme'   => 'http',
-            'host'     => 'localhost',
-            'port'     => 8332,
-            'user'     => 'testuser',
+            'scheme' => 'http',
+            'host' => 'localhost',
+            'port' => 8332,
+            'user' => 'testuser',
             'password' => 'testpass',
-            'ca'       => null,
-            'timeout'  => false,
-            'zeromq'   => [
+            'ca' => null,
+            'timeout' => false,
+            'zeromq' => [
                 'protocol' => 'tcp',
-                'host'     => 'localhost',
-                'port'     => 28332,
+                'host' => 'localhost',
+                'port' => 28332,
             ],
         ]);
 
         $app['config']->set('bitcoind.litecoin', [
-            'scheme'   => 'http',
-            'host'     => 'localhost',
-            'port'     => 9332,
-            'user'     => 'testuser2',
+            'scheme' => 'http',
+            'host' => 'localhost',
+            'port' => 9332,
+            'user' => 'testuser2',
             'password' => 'testpass2',
-            'ca'       => null,
-            'zeromq'   => null,
-            'timeout'  => 5,
+            'ca' => null,
+            'zeromq' => null,
+            'timeout' => 5,
         ]);
     }
 

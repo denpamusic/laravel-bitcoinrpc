@@ -53,13 +53,13 @@ class ClientFactory
     protected function withDefaults(array $config = []): array
     {
         return array_merge([
-            'scheme'   => 'http',
-            'host'     => 'localhost',
-            'port'     => 8332,
-            'user'     => null,
+            'scheme' => 'http',
+            'host' => 'localhost',
+            'port' => 8332,
+            'user' => null,
             'password' => null,
-            'ca'       => null,
-            'zeromq'   => null,
+            'ca' => null,
+            'zeromq' => null,
         ], $config);
     }
 

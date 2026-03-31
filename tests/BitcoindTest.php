@@ -157,13 +157,13 @@ class BitcoindTest extends TestCase
     public function testLegacyConfig()
     {
         config()->set('bitcoind', [
-            'scheme'   => 'http',
-            'host'     => 'localhost',
-            'port'     => 8332,
-            'user'     => 'testuser3',
+            'scheme' => 'http',
+            'host' => 'localhost',
+            'port' => 8332,
+            'user' => 'testuser3',
             'password' => 'testpass3',
-            'ca'       => null,
-            'timeout'  => false,
+            'ca' => null,
+            'timeout' => false,
         ]);
 
         $this->assertConfigEquals(bitcoind()->client(), config('bitcoind'));
@@ -188,12 +188,12 @@ class BitcoindTest extends TestCase
     public function testFactoryMake()
     {
         $config = [
-            'scheme'   => 'http',
-            'host'     => '127.0.0.3',
-            'port'     => 18332,
-            'user'     => 'testuser3',
+            'scheme' => 'http',
+            'host' => '127.0.0.3',
+            'port' => 18332,
+            'user' => 'testuser3',
             'password' => 'testpass3',
-            'timeout'  => false,
+            'timeout' => false,
         ];
 
         $this->assertConfigEquals(bitcoind()->make($config), $config);
